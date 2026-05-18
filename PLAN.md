@@ -462,6 +462,37 @@ Files to create:
 
 ---
 
+## Phase 9: README Documentation
+
+### 9.1 README Content
+- `README.md` will explain the project purpose, usage, architecture, and assumptions.
+- Include a quick start section with commands for installing dependencies, running the simulator, and running tests.
+- Describe the input JSON format and output report structure.
+- Document the available strategy options (`shortest`, `weighted`) and how to select them via CLI.
+- Explain logging behavior and the purpose of `--dev` mode.
+
+### 9.2 Implementation Assumptions
+- The simulator uses discrete-event simulation: time advances only to the next ride arrival or driver release event.
+- All times are represented internally as Unix seconds, while ISO-8601 strings are preserved for input/output.
+- Rides are sorted deterministically by `(request_time_seconds, distance, ride_id)` before simulation.
+- A driver is considered available if present in the spatial index; otherwise the driver is busy and stored in a heap by `available_at`.
+- Pickup distance is constrained by `MAX_PICKUP_DISTANCE_KM`, and only drivers within the 9-cell geohash neighborhood are considered.
+- Weighted matching normalizes distance and rating difference using global constants to produce a comparable score.
+- The input JSON contains both `drivers` and `rides` in a single file; invalid records are skipped with warnings.
+- The system reports unassigned rides when they time out after 300 seconds or remain unmatched at simulation end.
+
+### 9.3 README Structure
+- Project overview
+- Installation and dependencies
+- CLI usage examples
+- Input/output format
+- Strategy descriptions
+- Design assumptions and limitations
+- Testing instructions
+- Logging and output details
+
+---
+
 ## Execution Order
 
 **Build sequence (numerically deterministic):**
