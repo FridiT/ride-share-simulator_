@@ -19,34 +19,19 @@ RIDE_REQUEST_TIMEOUT_SECONDS: float = 300.0
 # ==================== Time Conversion Functions ====================
 
 
-def iso8601_to_seconds(timestamp_str: str) -> float:
-    """Convert ISO-8601 timestamp string to Unix seconds.
-    
-    Args:
-        timestamp_str: ISO-8601 formatted string (e.g., "2024-05-19T10:30:00Z")
-        
-    Returns:
-        Unix timestamp in seconds (float).
-        
-    Raises:
-        ValueError: If the timestamp string is not in valid ISO-8601 format.
-    """
+def timestamp_str_to_seconds(timestamp_str: str) -> float:
+    """Convert ISO-8601 timestamp string to Unix seconds."""
     try:
         dt = datetime.fromisoformat(timestamp_str.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            raise ValueError("Timezone is required")
         return dt.timestamp()
-    except (ValueError, AttributeError) as e:
+    except (ValueError, TypeError, AttributeError) as e:
         raise ValueError(f"Invalid ISO-8601 timestamp: {timestamp_str}") from e
 
 
-def seconds_to_iso8601(seconds: float) -> str:
-    """Convert Unix seconds to ISO-8601 timestamp string.
-    
-    Args:
-        seconds: Unix timestamp in seconds (float).
-        
-    Returns:
-        ISO-8601 formatted string with 'Z' suffix for UTC.
-    """
+def seconds_to_timestamp_str(seconds: float) -> str:
+    """Convert Unix seconds to ISO-8601 timestamp string in UTC."""
     dt = datetime.fromtimestamp(seconds, tz=timezone.utc)
     return dt.isoformat(timespec="seconds").replace("+00:00", "Z")
 

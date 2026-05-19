@@ -52,6 +52,16 @@ Command Prompt (CMD):
 python main.py --input data/input.json --strategy weighted --output output/results.json --dev
 ```
 
+### Generate Dev Input
+
+Use the helper script to create sample data for local testing:
+
+```cmd
+python scripts/generate_input.py
+```
+
+The script writes a fresh file and overwrites existing output if it already exists.
+
 ### CLI options
 
 - `--input`: Path to the input JSON file (default: `data/input.json`)
@@ -81,7 +91,7 @@ Example:
       "id": "ride_1",
       "pickup": {"lat": 32.066, "lon": 34.777},
       "dropoff": {"lat": 32.092, "lon": 34.789},
-      "request_time": 1716145200,
+      "request_time": "2024-05-19T10:30:00Z",
       "passenger_rating": 4.5,
       "vehicle_type": "private"
     }
@@ -96,7 +106,7 @@ The output report is a JSON file with the following structure:
 ```json
 {
   "assignments": [
-    {"timestamp_str": "2024-05-19T10:30:00Z", "ride_id": "ride_1", "driver_id": "driver_1"}
+    {"timestamp": "2024-05-19T10:30:00Z", "ride_id": "ride_1", "driver_id": "driver_1"}
   ],
   "unassigned": ["ride_2"],
   "metrics": {
@@ -125,16 +135,17 @@ The simulator writes log files to the `logs/` directory.
 ## Assumptions and Design Decisions
 
 - The main program expects an existing input JSON file and does not generate input data.
-- `scripts/generate_dev_input.py` is a dev utility that generates sample input for local testing.
+- `scripts/generate_input.py` is a helper utility that generates sample input data.
 - Input JSON is expected to contain both `drivers` and `rides` arrays in one document.
-- Internal time is represented as Unix seconds; external timestamps may be numeric or ISO-8601.
+- Internal time is represented as Unix seconds (float); external timestamps in input/output use ISO-8601 (for example `2024-05-19T10:30:00Z`).
 - Rides are sorted before simulation by `(request_time_seconds, distance, ride_id)`:
   - `request_time_seconds` ensures chronological processing,
   - `distance` prioritizes shorter trips to improve responsiveness and free drivers sooner,
   - `ride_id` makes ordering deterministic when other values tie.
 - Driver availability is modeled by data structure membership, not a separate availability flag.
 - Only drivers within the 9-cell geohash neighborhood and within `MAX_PICKUP_DISTANCE_KM` are considered.
-- Weighted matching normalizes distance and rating difference into a comparable score.
+- Ride requests time out after 300 seconds (5 minutes) in the pending queue and are marked unassigned.
+- Weighted matching uses `distance_weight=0.3` and `rating_weight=0.7`, with normalization for both components.
 - Invalid input records are skipped with warnings rather than causing a fatal error.
 
 ## Notes

@@ -20,7 +20,7 @@ def test_parse_input_json_valid(tmp_path):
                 "id": "r1",
                 "pickup": {"lat": 10.0, "lon": 10.0},
                 "dropoff": {"lat": 10.1, "lon": 10.1},
-                "request_time": 1704067200.0,
+                "request_time": "2024-01-01T00:00:00Z",
                 "passenger_rating": 5.0,
                 "vehicle_type": "private",
             }
@@ -64,7 +64,7 @@ def test_parse_input_json_skips_invalid_records(tmp_path):
                 "id": "r1",
                 "pickup": {"lat": 10.0, "lon": 10.0},
                 "dropoff": {"lat": 10.1, "lon": 10.1},
-                "request_time": 1704067200.0,
+                "request_time": "2024-01-01T00:00:00Z",
                 "passenger_rating": 5.0,
                 "vehicle_type": "private",
             },
@@ -72,7 +72,7 @@ def test_parse_input_json_skips_invalid_records(tmp_path):
                 "id": "r2",
                 "pickup": {"lat": 10.0, "lon": 10.0},
                 "dropoff": {"lat": 10.1, "lon": 10.1},
-                "request_time": -1.0,
+                "request_time": "2024-01-01_00-00-00",
                 "passenger_rating": 5.0,
                 "vehicle_type": "private",
             },
@@ -90,9 +90,55 @@ def test_parse_input_json_skips_invalid_records(tmp_path):
     assert rides[0].id == "r1"
 
 
+def test_parse_input_json_skips_invalid_timestamp_string_request_time(tmp_path):
+    payload = {
+        "drivers": [],
+        "rides": [
+            {
+                "id": "r_bad_ts",
+                "pickup": {"lat": 10.0, "lon": 10.0},
+                "dropoff": {"lat": 10.1, "lon": 10.1},
+                "request_time": "not-a-timestamp",
+                "passenger_rating": 4.0,
+                "vehicle_type": "private",
+            }
+        ],
+    }
+
+    file_path = tmp_path / "input_bad_ts.json"
+    file_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    _, rides = parse_input_json(str(file_path))
+
+    assert rides == []
+
+
+def test_parse_input_json_skips_numeric_request_time(tmp_path):
+    payload = {
+        "drivers": [],
+        "rides": [
+            {
+                "id": "r_num",
+                "pickup": {"lat": 10.0, "lon": 10.0},
+                "dropoff": {"lat": 10.1, "lon": 10.1},
+                "request_time": 1704067200.0,
+                "passenger_rating": 4.0,
+                "vehicle_type": "private",
+            }
+        ],
+    }
+
+    file_path = tmp_path / "input_num_ts.json"
+    file_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    _, rides = parse_input_json(str(file_path))
+
+    assert rides == []
+
+
 def test_generate_report_and_save_to_json(tmp_path):
     results = {
-        "assignments": [{"timestamp": 1704067200.0, "ride_id": "r1", "driver_id": "d1"}],
+        "assignments": [{"timestamp": "2024-01-01T00:00:00Z", "ride_id": "r1", "driver_id": "d1"}],
         "unassigned": ["r2"],
         "metrics": {
             "global_average_arrival_time": 2.5,

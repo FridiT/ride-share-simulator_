@@ -75,3 +75,29 @@ def test_weighted_score_strategy_prefers_better_driver():
     winner = strategy.match(ride, [closer_lower_rating, farther_better_rating])
 
     assert winner is closer_lower_rating
+
+
+def test_simulator_assignment_timestamp_is_formatted_string():
+    ride = Ride(
+        id="r3",
+        pickup=Location(10.0, 10.0),
+        dropoff=Location(10.01, 10.01),
+        request_time_seconds=1704067200.0,
+        passenger_rating=4.0,
+        vehicle_type="private",
+    )
+    driver = Driver(
+        id="d5",
+        name="Driver5",
+        rating=4.2,
+        vehicle_type="private",
+        current_location=Location(10.0, 10.0),
+    )
+
+    sim = Simulator(WeightedScoreStrategy())
+    sim.add_driver(driver)
+
+    results = sim.run([ride])
+
+    assert len(results["assignments"]) == 1
+    assert results["assignments"][0]["timestamp"] == "2024-01-01T00:00:00Z"

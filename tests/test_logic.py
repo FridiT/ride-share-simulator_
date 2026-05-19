@@ -3,8 +3,8 @@
 import pytest
 
 from src.logic import (
-    iso8601_to_seconds,
-    seconds_to_iso8601,
+    timestamp_str_to_seconds,
+    seconds_to_timestamp_str,
     is_timed_out,
     format_duration,
     haversine,
@@ -12,33 +12,22 @@ from src.logic import (
 )
 
 
-# ==================== Time Conversion Tests ====================
-
-
-def test_iso8601_to_seconds_valid() -> None:
-    timestamp_str = "2024-05-19T10:30:00Z"
-    seconds = iso8601_to_seconds(timestamp_str)
+def test_timestamp_str_to_seconds_valid() -> None:
+    seconds = timestamp_str_to_seconds("2024-05-19T10:30:00Z")
     assert isinstance(seconds, float)
     assert seconds > 0
 
 
-def test_iso8601_to_seconds_invalid_format() -> None:
+def test_seconds_to_timestamp_str_roundtrip() -> None:
+    original_seconds = 1716114600.0
+    timestamp_str = seconds_to_timestamp_str(original_seconds)
+    assert timestamp_str == "2024-05-19T10:30:00Z"
+    assert timestamp_str_to_seconds(timestamp_str) == original_seconds
+
+
+def test_timestamp_str_to_seconds_invalid_format() -> None:
     with pytest.raises(ValueError, match="Invalid ISO-8601"):
-        iso8601_to_seconds("not-a-timestamp")
-
-
-def test_seconds_to_iso8601_valid() -> None:
-    seconds = 1716121800.0  # 2024-05-19T10:30:00 UTC
-    timestamp_str = seconds_to_iso8601(seconds)
-    assert "Z" in timestamp_str
-    assert isinstance(timestamp_str, str)
-
-
-def test_seconds_to_iso8601_roundtrip() -> None:
-    original_str = "2024-05-19T10:30:00Z"
-    seconds = iso8601_to_seconds(original_str)
-    reconstructed_str = seconds_to_iso8601(seconds)
-    assert seconds == iso8601_to_seconds(reconstructed_str)
+        timestamp_str_to_seconds("2024-05-19_10-30-00")
 
 
 # ==================== Timeout Tests ====================

@@ -26,7 +26,7 @@ Ride_Share_Simulator/
 **File:** `tests/__init__.py`
 - Empty file to mark `tests` as a Python package
 
-**File:** `scripts/generate_dev_input.py`
+**File:** `scripts/generate_input.py`
 - Development helper script whose main purpose is to generate a sample input JSON file for the simulator
 - Produces a file with 30 drivers and 70 rides for local testing
 - This is a separate dev-time utility, not part of the main production runtime
@@ -43,7 +43,7 @@ Ride_Share_Simulator/
 **General Design Principles:**
 - **Stateless Logic:** All helper functions and strategies are pure functions with no internal state. Calculations depend only on function parameters.
 - **Single Source of Truth (Driver Availability):** A driver's availability is determined solely by its location in the data structures: presence in `spatial_index` means available, presence in `busy_drivers` heap means occupied.
-- **Data Type Convention:** All times are stored as **float (Unix seconds)** internally for calculations. Original ISO-8601 strings are preserved in domain entities for input and output reporting. Conversion happens once during input parsing.
+- **Data Type Convention:** All times are stored as **float (Unix seconds)** internally for calculations. External JSON timestamps use ISO-8601 and are converted during parsing/serialization.
 
 ### 2.1 Location Class [DONE] ✓
 **File:** `src/models.py`
@@ -98,18 +98,17 @@ Ride_Share_Simulator/
 - `id: str` - Unique ride identifier
 - `pickup: Location` - Pickup location
 - `dropoff: Location` - Dropoff location
-- `request_time_str: str` - Original ISO-8601 timestamp string
-- `request_time_seconds: float` - Converted Unix timestamp (seconds) via `iso8601_to_seconds()` in `__post_init__()`
+- `request_time_seconds: float` - Unix timestamp (seconds) used by the simulation engine
 - `passenger_rating: float` - Passenger rating (1-5 scale)
 
 **Methods:**
-- `__init__(id: str, pickup: Location, dropoff: Location, request_time_str: str, passenger_rating: float)` - Constructor with validation
-- `__post_init__()` - Validate fields and convert ISO-8601 string to Unix seconds
+- `__init__(id: str, pickup: Location, dropoff: Location, request_time_seconds: float, passenger_rating: float)` - Constructor with validation
+- `__post_init__()` - Validate numeric Unix-seconds timestamp
 - `calculate_distance() -> float` - Get distance from pickup to dropoff in km using `pickup.distance_to(dropoff)` (which delegates to centralized `haversine()` function)
 - `calculate_estimated_time(speed_kmh: float = BASE_SPEED_KMH) -> float` - Estimate trip duration in seconds
 - `__repr__() -> str` - String representation for debugging
 
-**Dependencies:** `Location` class, `iso8601_to_seconds()` from `src.logic`
+**Dependencies:** `Location` class, `timestamp_str_to_seconds()` from `src.logic`
 
 ---
 
@@ -124,8 +123,8 @@ Ride_Share_Simulator/
 - These constants are used across the system for travel estimation and normalized scoring logic.
 
 **Global Time Conversion Functions:**
-- `iso8601_to_seconds(timestamp_str: str) -> float` - Convert ISO-8601 string to Unix seconds using `datetime` module
-- `seconds_to_iso8601(seconds: float) -> str` - Convert Unix seconds back to ISO-8601 string
+- `timestamp_str_to_seconds(timestamp_str: str) -> float` - Convert ISO-8601 string to Unix seconds using `datetime` module
+- `seconds_to_timestamp_str(seconds: float) -> str` - Convert Unix seconds to ISO-8601 string
 - `is_timed_out(request_time_seconds: float, current_time_seconds: float, timeout_seconds: float = 300) -> bool` - Check if ride exceeded timeout
 - `format_duration(seconds: float) -> str` - Convert seconds to readable format (HH:MM:SS)
 
@@ -281,7 +280,7 @@ Files to create:
   - Return matched driver or None
 
 - `assign_ride(ride: Ride, driver: Driver) -> None` - Execute ride assignment
-  - Add to assignments list with: {timestamp_str, ride_id, driver_id}
+  - Add to assignments list with: {timestamp, ride_id, driver_id}
   - Remove driver from spatial_index
   - Calculate driver travel time to pickup:
     - `pickup_distance_km = driver.current_location.haversine_distance_to(ride.pickup)`
@@ -344,7 +343,7 @@ Files to create:
 - Define two JSON schemas (one for drivers, one for rides) that enforce:
   - Required fields: all required fields must be present
   - Type constraints: strings, floats, etc.
-  - Range constraints: latitude [-90, 90], longitude [-180, 180], ratings [1, 5], request_time ISO-8601 format
+  - Range constraints: latitude [-90, 90], longitude [-180, 180], ratings [1, 5], request_time in ISO-8601 format
 - Use `jsonschema` library to validate each record
 - If validation fails, log warning, skip record, continue to next
 
@@ -364,7 +363,7 @@ Files to create:
     - If invalid: log warning, skip record
   - For each ride record:
     - Validate against ride schema
-    - If valid: convert `request_time` ISO-8601 to float seconds, create Ride object, add to rides list
+    - If valid: convert `request_time` (ISO-8601) to float seconds, create Ride object, add to rides list
     - If invalid: log warning, skip record
   - Return tuple: (drivers, rides)
 
@@ -381,7 +380,7 @@ Files to create:
 - `generate_report(simulator_results: Dict) -> Dict` - Format simulation results for output
   - Receive assignments, unassigned, and precomputed metrics from simulator results
   - Create structured report with:
-    - assignments: List of {timestamp_str, ride_id, driver_id}
+    - assignments: List of {timestamp, ride_id, driver_id}
     - unassigned: List of ride_ids (timed out or never matched)
     - metrics:
       - global_average_arrival_time: mean arrival time to pickup (from request to assignment) across all assigned rides (in minutes, round 2 digits)
@@ -397,7 +396,7 @@ Files to create:
   - JSON structure:
     ```json
     {
-      "assignments": [{"timestamp_str": "...", "ride_id": "...", "driver_id": "..."}, ...],
+      "assignments": [{"timestamp": "2024-05-19T10:30:00Z", "ride_id": "...", "driver_id": "..."}, ...],
       "unassigned": ["ride_id1", "ride_id2", ...],
       "metrics": {
         "global_average_arrival_time": 123.45,
@@ -467,7 +466,7 @@ Files to create:
 
 ---
 
-## Phase 9: README Documentation [DONE] ✓
+## Phase 9: README Documentation
 
 ### 9.1 README Content
 - `README.md` will explain the project purpose, usage, architecture, and assumptions.
@@ -478,16 +477,16 @@ Files to create:
 
 ### 9.2 Implementation Assumptions
 - The simulator uses discrete-event simulation: time advances only to the next ride arrival or driver release event.
-- All times are represented internally as Unix seconds, while ISO-8601 strings are preserved for input/output.
+- All times are represented internally as Unix seconds; external JSON uses ISO-8601 timestamps.
 - Rides are sorted deterministically by `(request_time_seconds, distance, ride_id)` before simulation:
   - `request_time_seconds` ensures rides are processed in chronological order,
   - `distance` prioritizes shorter trips first to improve system responsiveness and customer experience by freeing drivers earlier,
   - `ride_id` makes the ordering deterministic when times and distances are equal.
 - A driver is considered available if present in the spatial index; otherwise the driver is busy and stored in a heap by `available_at`.
 - Pickup distance is constrained by `MAX_PICKUP_DISTANCE_KM`, and only drivers within the 9-cell geohash neighborhood are considered.
-- Weighted matching normalizes distance and rating difference using global constants to produce a comparable score.
+- Weighted matching uses `distance_weight=0.3` and `rating_weight=0.7` and normalizes distance/rating difference for comparability.
 - The input JSON contains both `drivers` and `rides` in a single file; invalid records are skipped with warnings.
-- The system reports unassigned rides when they time out after 300 seconds or remain unmatched at simulation end.
+- The system reports unassigned rides when they time out after 300 seconds (5 minutes) or remain unmatched at simulation end.
 
 ### 9.3 README Structure
 - Project overview

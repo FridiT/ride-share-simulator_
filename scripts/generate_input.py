@@ -1,7 +1,7 @@
 """Generate a sample JSON input file for the Ride Share Simulator.
 
-This script is a development helper for creating driver and ride datasets
-that can be used for local testing and verification.
+This script creates driver and ride datasets that can be used directly
+by the main simulator command.
 """
 
 from __future__ import annotations
@@ -62,7 +62,7 @@ def _build_rides(count: int, start_time: datetime) -> List[Dict[str, Any]]:
                 "id": f"ride_{index}",
                 "pickup": pickup,
                 "dropoff": dropoff,
-                "request_time": round(current_time.timestamp(), 2),
+                "request_time": current_time.isoformat(timespec="seconds").replace("+00:00", "Z"),
                 "passenger_rating": _random_rating(),
                 "vehicle_type": _random_vehicle_type(),
             }
@@ -83,10 +83,10 @@ def generate_sample_input(drivers: int, rides: int, output_path: Path) -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate development JSON input for the Ride Share Simulator.")
+    parser = argparse.ArgumentParser(description="Generate JSON input for the Ride Share Simulator.")
     parser.add_argument(
         "--output",
-        default="data/input_dev.json",
+        default="data/input.json",
         help="Path to write the generated JSON input file.",
     )
     parser.add_argument(
@@ -112,9 +112,9 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    random.seed(args.seed)
-
     output_path = Path(args.output)
+
+    random.seed(args.seed)
     generate_sample_input(args.drivers, args.rides, output_path)
     print(f"Generated sample input: {output_path} ({args.drivers} drivers, {args.rides} rides)")
     return 0

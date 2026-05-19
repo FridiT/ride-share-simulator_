@@ -8,6 +8,7 @@ from typing import Dict, List, Tuple
 
 from jsonschema import ValidationError, validate
 
+from src.logic import timestamp_str_to_seconds
 from src.models import Driver, Location, Ride
 
 logger = logging.getLogger(__name__)
@@ -56,7 +57,10 @@ RIDE_SCHEMA = {
             },
             "additionalProperties": False,
         },
-        "request_time": {"type": "number", "minimum": 0.0},
+        "request_time": {
+            "type": "string",
+            "pattern": r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})$",
+        },
         "passenger_rating": {"type": "number", "minimum": 1.0, "maximum": 5.0},
         "vehicle_type": {"type": "string", "enum": ["private", "suv"]},
     },
@@ -71,6 +75,12 @@ def _validate_record(record: dict, schema: dict) -> bool:
     except ValidationError as error:
         logger.warning("Skipping invalid record: %s", error.message)
         return False
+
+
+def _parse_request_time(value: object) -> float:
+    if not isinstance(value, str):
+        raise ValueError("request_time must use ISO-8601 format.")
+    return timestamp_str_to_seconds(value)
 
 
 def parse_input_json(filepath: str) -> Tuple[List[Driver], List[Ride]]:
@@ -123,7 +133,7 @@ def parse_input_json(filepath: str) -> Tuple[List[Driver], List[Ride]]:
                 id=ride_record["id"],
                 pickup=pickup,
                 dropoff=dropoff,
-                request_time_seconds=float(ride_record["request_time"]),
+                request_time_seconds=_parse_request_time(ride_record["request_time"]),
                 passenger_rating=float(ride_record["passenger_rating"]),
                 vehicle_type=ride_record.get("vehicle_type", "private"),
             )
