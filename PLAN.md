@@ -222,7 +222,7 @@ Files to create:
 
 ---
 
-## Phase 5: Simulation Orchestration (src/simulator.py)
+## Phase 5: Simulation Orchestration (src/simulator.py) [DONE] ✓
 
 ### 5.1 Simulator Class
 **File:** `src/simulator.py`
@@ -450,7 +450,7 @@ Files to create:
 
 ---
 
-## Phase 8: Unit Tests (tests/)
+## Phase 8: Unit Tests (tests/) [IN PROGRESS]
 
 ### 8.1 Test Files Structure
 - `tests/test_models.py` - Test Location, Driver, Ride classes
