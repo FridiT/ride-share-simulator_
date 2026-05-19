@@ -27,8 +27,10 @@ Ride_Share_Simulator/
 - Empty file to mark `tests` as a Python package
 
 **File:** `scripts/generate_dev_input.py`
-- Development helper script to create sample JSON input with 30 drivers and 70 rides
-- Use for fast local testing and to verify unmatched-ride behavior, with closely timestamp to get rides that will not be assign
+- Development helper script whose main purpose is to generate a sample input JSON file for the simulator
+- Produces a file with 30 drivers and 70 rides for local testing
+- This is a separate dev-time utility, not part of the main production runtime
+- Use for fast local testing and to verify unmatched-ride behavior, with closely spaced timestamps to create rides that may remain unassigned
 
 ### 1.3 External Dependencies [DONE] ✓
 - `pygeohash` - spatial neighbor geohash calculations
@@ -111,7 +113,7 @@ Ride_Share_Simulator/
 
 ---
 
-## Phase 3: Mathematical & Geospatial Engine (src/logic.py)
+## Phase 3: Mathematical & Geospatial Engine (src/logic.py) [DONE] ✓
 
 **Module-Level Constants:**
 - `GEOHASH_PRECISION: int = 5` - Geohash precision for spatial partitioning
@@ -329,7 +331,7 @@ Files to create:
 
 ---
 
-## Phase 6: Data Input/Output (src/parser.py)
+## Phase 6: Data Input/Output (src/parser.py) [DONE] ✓
 
 **Input Format:**
 - Single JSON file containing both drivers and rides: `{"drivers": [...], "rides": [...]}`
@@ -410,7 +412,7 @@ Files to create:
 
 ---
 
-## Phase 7: Main Entry Point (main.py)
+## Phase 7: Main Entry Point (main.py) [DONE] ✓
 
 ### 7.1 Main Function
 **File:** `main.py` (at project root)
@@ -433,6 +435,7 @@ Files to create:
 - Parse command-line arguments
 - Load input JSON file via `InputParser.parse_input_json(input_path)`
   - The parser handles one JSON input file containing both drivers and rides
+  - The main program expects this input file to already exist; it does not generate the input itself
   - Handle missing input file and invalid JSON with logged error messages
 - Validate strategy name; exit with help message if invalid
 - Instantiate strategy based on --strategy argument
@@ -450,7 +453,7 @@ Files to create:
 
 ---
 
-## Phase 8: Unit Tests (tests/) [IN PROGRESS]
+## Phase 8: Unit Tests (tests/)
 
 ### 8.1 Test Files Structure
 - `tests/test_models.py` - Test Location, Driver, Ride classes
@@ -464,7 +467,7 @@ Files to create:
 
 ---
 
-## Phase 9: README Documentation
+## Phase 9: README Documentation [DONE] ✓
 
 ### 9.1 README Content
 - `README.md` will explain the project purpose, usage, architecture, and assumptions.
@@ -476,7 +479,10 @@ Files to create:
 ### 9.2 Implementation Assumptions
 - The simulator uses discrete-event simulation: time advances only to the next ride arrival or driver release event.
 - All times are represented internally as Unix seconds, while ISO-8601 strings are preserved for input/output.
-- Rides are sorted deterministically by `(request_time_seconds, distance, ride_id)` before simulation.
+- Rides are sorted deterministically by `(request_time_seconds, distance, ride_id)` before simulation:
+  - `request_time_seconds` ensures rides are processed in chronological order,
+  - `distance` prioritizes shorter trips first to improve system responsiveness and customer experience by freeing drivers earlier,
+  - `ride_id` makes the ordering deterministic when times and distances are equal.
 - A driver is considered available if present in the spatial index; otherwise the driver is busy and stored in a heap by `available_at`.
 - Pickup distance is constrained by `MAX_PICKUP_DISTANCE_KM`, and only drivers within the 9-cell geohash neighborhood are considered.
 - Weighted matching normalizes distance and rating difference using global constants to produce a comparable score.
@@ -489,7 +495,7 @@ Files to create:
 - CLI usage examples
 - Input/output format
 - Strategy descriptions
-- Design assumptions and limitations
+- Assumptions and design decisions
 - Testing instructions
 - Logging and output details
 

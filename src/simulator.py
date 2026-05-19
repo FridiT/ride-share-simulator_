@@ -14,6 +14,7 @@ from src.logic import (
     MAX_PICKUP_DISTANCE_KM,
     RIDE_REQUEST_TIMEOUT_SECONDS,
     get_nearby_geohashes,
+    seconds_to_iso8601,
 )
 from src.models import Driver, Ride
 from src.strategies.base import BaseStrategy
@@ -101,8 +102,9 @@ class Simulator:
 
     def assign_ride(self, ride: Ride, driver: Driver) -> None:
         """Perform assignment bookkeeping and move driver to busy heap."""
-        self.assignments.append({"timestamp": self.current_time, "ride_id": ride.id, "driver_id": driver.id})
-        logger.info("Assigned ride %s to driver %s at %.1f", ride.id, driver.id, self.current_time)
+        timestamp_str = seconds_to_iso8601(self.current_time)
+        self.assignments.append({"timestamp_str": timestamp_str, "ride_id": ride.id, "driver_id": driver.id})
+        logger.info("Assigned ride %s to driver %s at %s", ride.id, driver.id, timestamp_str)
 
         # Remove driver from spatial_index
         gh = driver.current_location.to_geohash(GEOHASH_PRECISION)
