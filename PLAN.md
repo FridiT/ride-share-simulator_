@@ -322,8 +322,8 @@ Files to create:
 
 #### 5.1.6 Metrics Calculation
 - `calculate_metrics() -> Dict` - Compute performance statistics
-  - global_average_arrival_time: mean time from request to assignment of all assigned rides  
-  - driver_stats: Dict per driver_id with {ride_count, average_arrival_time}
+  - global_average_arrival_time: mean time from request to assignment of all assigned rides (in minutes)
+  - driver_stats: Dict per driver_id with {ride_count, average_arrival_time (minutes)}
 
 **Dependencies:** BaseStrategy, Driver, Ride, global time/geo functions
 

@@ -91,6 +91,7 @@ class Ride:
     dropoff: Location
     request_time_str: str
     passenger_rating: float
+    vehicle_type: str = "private"
     request_time_seconds: float = field(default=0.0, init=False)
 
     def __post_init__(self) -> None:
@@ -99,6 +100,10 @@ class Ride:
             raise ValueError("Ride id cannot be empty.")
         if not 1.0 <= self.passenger_rating <= 5.0:
             raise ValueError("Passenger rating must be between 1.0 and 5.0.")
+
+        # Validate vehicle_type: supported types are 'private' and 'suv'
+        if self.vehicle_type not in ("private", "suv"):
+            raise ValueError("vehicle_type must be one of: 'private', 'suv'.")
 
         try:
             object.__setattr__(self, "request_time_seconds", iso8601_to_seconds(self.request_time_str))
