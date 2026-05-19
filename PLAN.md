@@ -1,8 +1,8 @@
 # Ride Share Simulator - Detailed Implementation Plan
 
-## Phase 1: Project Structure & Setup
+## Phase 1: Project Structure & Setup [DONE] ✓
 
-### 1.1 Create Directory Structure
+### 1.1 Create Directory Structure [DONE] ✓
 **Action:** Create the following directories at project root
 ```
 Ride_Share_Simulator/
@@ -16,7 +16,7 @@ Ride_Share_Simulator/
 └── README.md
 ```
 
-### 1.2 Create Python Package Initialization
+### 1.2 Create Python Package Initialization [DONE] ✓
 **File:** `src/__init__.py`
 - Empty file to mark `src` as a Python package
 
@@ -30,7 +30,7 @@ Ride_Share_Simulator/
 - Development helper script to create sample JSON input with 30 drivers and 70 rides
 - Use for fast local testing and to verify unmatched-ride behavior, with closely timestamp to get rides that will not be assign
 
-### 1.3 External Dependencies
+### 1.3 External Dependencies [DONE] ✓
 - `pygeohash` - spatial neighbor geohash calculations
 - `jsonschema` - input validation with JSON schemas
 
@@ -43,7 +43,7 @@ Ride_Share_Simulator/
 - **Single Source of Truth (Driver Availability):** A driver's availability is determined solely by its location in the data structures: presence in `spatial_index` means available, presence in `busy_drivers` heap means occupied.
 - **Data Type Convention:** All times are stored as **float (Unix seconds)** internally for calculations. Original ISO-8601 strings are preserved in domain entities for input and output reporting. Conversion happens once during input parsing.
 
-### 2.1 Location Class
+### 2.1 Location Class [DONE] ✓
 **File:** `src/models.py`
 **Class:** `Location`
 
@@ -56,15 +56,15 @@ Ride_Share_Simulator/
 - `lon: float` - Longitude coordinate
 
 **Methods:**
-- `distance_to(other: 'Location') -> float` - Calculate the great-circle distance in kilometers to another `Location` using the Haversine formula and Python's `math` module.
+- `distance_to(other: 'Location') -> float` - Calculate the great-circle distance in kilometers to another `Location` by delegating to the centralized `haversine()` function in `src/logic.py`.
   - Docstring note: Haversine distance approximates the straight-line great-circle distance on the Earth's surface and is the most accurate straight-line model for global coordinates.
 - `to_geohash(precision: int = 6) -> str` - Convert the latitude/longitude pair to a geohash string using `pygeohash`.
 
-**Dependencies:** `math`, `pygeohash`
+**Dependencies:** `pygeohash`, `src.logic.haversine` (centralized geospatial calculation)
 
 ---
 
-### 2.2 Driver Class
+### 2.2 Driver Class [DONE] ✓
 **File:** `src/models.py`
 **Class:** `Driver`
 
@@ -88,7 +88,7 @@ Ride_Share_Simulator/
 
 ---
 
-### 2.3 Ride Class
+### 2.3 Ride Class [DONE] ✓
 **File:** `src/models.py`
 **Class:** `Ride`
 
@@ -97,16 +97,17 @@ Ride_Share_Simulator/
 - `pickup: Location` - Pickup location
 - `dropoff: Location` - Dropoff location
 - `request_time_str: str` - Original ISO-8601 timestamp string
-- `request_time_seconds: float` - Converted Unix timestamp (seconds)
+- `request_time_seconds: float` - Converted Unix timestamp (seconds) via `iso8601_to_seconds()` in `__post_init__()`
 - `passenger_rating: float` - Passenger rating (1-5 scale)
 
 **Methods:**
-- `__init__(id: str, pickup: Location, dropoff: Location, request_time_str: str, passenger_rating: float)` - Constructor
-- `calculate_distance() -> float` - Get distance from pickup to dropoff in km
+- `__init__(id: str, pickup: Location, dropoff: Location, request_time_str: str, passenger_rating: float)` - Constructor with validation
+- `__post_init__()` - Validate fields and convert ISO-8601 string to Unix seconds
+- `calculate_distance() -> float` - Get distance from pickup to dropoff in km using `pickup.distance_to(dropoff)` (which delegates to centralized `haversine()` function)
 - `calculate_estimated_time(speed_kmh: float = BASE_SPEED_KMH) -> float` - Estimate trip duration in seconds
 - `__repr__() -> str` - String representation for debugging
 
-**Dependencies:** Location class
+**Dependencies:** `Location` class, `iso8601_to_seconds()` from `src.logic`
 
 ---
 
@@ -134,7 +135,7 @@ Ride_Share_Simulator/
 **File:** `src/logic.py`
 
 **Global Geospatial Functions:**
-- `haversine(lat1: float, lon1: float, lat2: float, lon2: float) -> float` - Calculate great-circle distance between two coordinates in km using `math` module
+- `haversine(lat1: float, lon1: float, lat2: float, lon2: float) -> float` - Calculate great-circle distance between two coordinates in km using `math` module. This is the **centralized distance calculation** used by `Location.distance_to()` and `Ride.calculate_distance()`.
 - `get_nearby_geohashes(geohash: str) -> List[str]` - Get neighboring geohash cells (9-cell neighborhood) using `pygeohash` library
 
 **Dependencies:** `math` module (standard library), `pygeohash` library (3rd-party)
