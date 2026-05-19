@@ -12,7 +12,7 @@ from src.logic import (
     GEOHASH_PRECISION,
     BASE_SPEED_KMH,
     MAX_PICKUP_DISTANCE_KM,
-    RIDE_REQUEST_TIMEOUT_SECONDS,
+    is_timed_out,
     seconds_to_timestamp_str,
     get_nearby_geohashes,
 )
@@ -165,7 +165,7 @@ class Simulator:
                     self.assign_ride(pending, driver)
                 else:
                     # Check timeout
-                    if (self.current_time - pending.request_time_seconds) > RIDE_REQUEST_TIMEOUT_SECONDS:
+                    if is_timed_out(pending.request_time_seconds, self.current_time):
                         self.unassigned.append(pending.id)
                     else:
                         self.pending_rides.append(pending)

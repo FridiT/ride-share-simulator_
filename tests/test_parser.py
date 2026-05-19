@@ -136,6 +136,28 @@ def test_parse_input_json_skips_numeric_request_time(tmp_path):
     assert rides == []
 
 
+def test_parse_input_json_skips_ride_missing_vehicle_type(tmp_path):
+    payload = {
+        "drivers": [],
+        "rides": [
+            {
+                "id": "r_missing_vehicle",
+                "pickup": {"lat": 10.0, "lon": 10.0},
+                "dropoff": {"lat": 10.1, "lon": 10.1},
+                "request_time": "2024-01-01T00:00:00Z",
+                "passenger_rating": 4.0,
+            }
+        ],
+    }
+
+    file_path = tmp_path / "input_missing_vehicle_type.json"
+    file_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    _, rides = parse_input_json(str(file_path))
+
+    assert rides == []
+
+
 def test_generate_report_and_save_to_json(tmp_path):
     results = {
         "assignments": [{"timestamp": "2024-01-01T00:00:00Z", "ride_id": "r1", "driver_id": "d1"}],

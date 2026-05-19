@@ -12,7 +12,7 @@ This project implements a discrete-event ride-share simulator that:
 
 ## Installation
 
-Recommended Python version: 3.10+
+Recommended Python version: 3.12+
 
 1. Create and activate a virtual environment.
 
@@ -137,14 +137,14 @@ The simulator writes log files to the `logs/` directory.
 - The main program expects an existing input JSON file and does not generate input data.
 - `scripts/generate_input.py` is a helper utility that generates sample input data.
 - Input JSON is expected to contain both `drivers` and `rides` arrays in one document.
-- Internal time is represented as Unix seconds (float); external timestamps in input/output use ISO-8601 (for example `2024-05-19T10:30:00Z`).
+- Internal time is represented as Unix seconds (float); external timestamps in input/output must use ISO-8601 with seconds and timezone information (for example `2024-05-19T10:30:00Z` or `2024-05-19T10:30:00+02:00`).
 - Rides are sorted before simulation by `(request_time_seconds, distance, ride_id)`:
   - `request_time_seconds` ensures chronological processing,
   - `distance` prioritizes shorter trips to improve responsiveness and free drivers sooner,
   - `ride_id` makes ordering deterministic when other values tie.
 - Driver availability is modeled by data structure membership, not a separate availability flag.
-- Only drivers within the 9-cell geohash neighborhood and within `MAX_PICKUP_DISTANCE_KM` are considered.
-- Ride requests time out after 300 seconds (5 minutes) in the pending queue and are marked unassigned.
+- Candidate search first scans the 9-cell geohash neighborhood as a spatial prefilter, then applies the configurable `MAX_PICKUP_DISTANCE_KM` radius as the actual pickup distance constraint.
+- Ride requests time out only after exceeding 300 seconds (5 minutes) in the pending queue and are marked unassigned.
 - Weighted matching uses `distance_weight=0.3` and `rating_weight=0.7`, with normalization for both components.
 - Invalid input records are skipped with warnings rather than causing a fatal error.
 

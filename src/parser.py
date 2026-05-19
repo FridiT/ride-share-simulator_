@@ -36,7 +36,7 @@ DRIVER_SCHEMA = {
 
 RIDE_SCHEMA = {
     "type": "object",
-    "required": ["id", "pickup", "dropoff", "request_time", "passenger_rating"],
+    "required": ["id", "pickup", "dropoff", "request_time", "passenger_rating", "vehicle_type"],
     "properties": {
         "id": {"type": "string", "minLength": 1},
         "pickup": {
@@ -135,7 +135,7 @@ def parse_input_json(filepath: str) -> Tuple[List[Driver], List[Ride]]:
                 dropoff=dropoff,
                 request_time_seconds=_parse_request_time(ride_record["request_time"]),
                 passenger_rating=float(ride_record["passenger_rating"]),
-                vehicle_type=ride_record.get("vehicle_type", "private"),
+                vehicle_type=ride_record["vehicle_type"],
             )
             rides.append(ride)
         except Exception as error:

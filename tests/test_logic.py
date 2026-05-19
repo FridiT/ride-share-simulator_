@@ -39,6 +39,12 @@ def test_is_timed_out_within_window() -> None:
     assert not is_timed_out(request_time, current_time)
 
 
+def test_is_not_timed_out_at_exact_default_timeout() -> None:
+    request_time = 1000.0
+    current_time = 1300.0  # exactly 300 seconds later
+    assert not is_timed_out(request_time, current_time)
+
+
 def test_is_timed_out_exceeds_default_timeout() -> None:
     request_time = 1000.0
     current_time = 1400.0  # 400 seconds later (exceeds 300s default)
