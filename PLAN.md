@@ -142,7 +142,7 @@ Ride_Share_Simulator/
 
 ---
 
-## Phase 4: Decision Logic (src/strategies/)
+## Phase 4: Decision Logic (src/strategies/) [DONE] ✓
 
 Implement strategies as a small package `src/strategies/` with three modules:
 
@@ -209,6 +209,7 @@ Files to create:
   - Use `ScoringEngine.compare_scores()` to find minimum score
   - Return None if candidates list is empty
   - Return driver with minimum score
+  - Documentation refined to clarify that lower score indicates a better weighted match
 
 **Private Methods:**
 - `_calculate_weighted_score(distance: float, driver_rating: float, passenger_rating: float) -> float` - Compute weighted score using ScoringEngine weights
