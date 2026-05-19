@@ -14,7 +14,6 @@ from src.logic import (
     MAX_PICKUP_DISTANCE_KM,
     RIDE_REQUEST_TIMEOUT_SECONDS,
     get_nearby_geohashes,
-    seconds_to_iso8601,
 )
 from src.models import Driver, Ride
 from src.strategies.base import BaseStrategy
@@ -102,9 +101,8 @@ class Simulator:
 
     def assign_ride(self, ride: Ride, driver: Driver) -> None:
         """Perform assignment bookkeeping and move driver to busy heap."""
-        timestamp_str = seconds_to_iso8601(self.current_time)
-        self.assignments.append({"timestamp_str": timestamp_str, "ride_id": ride.id, "driver_id": driver.id})
-        logger.info("Assigned ride %s to driver %s at %s", ride.id, driver.id, timestamp_str)
+        self.assignments.append({"timestamp": self.current_time, "ride_id": ride.id, "driver_id": driver.id})
+        logger.info("Assigned ride %s to driver %s at %.1f", ride.id, driver.id, self.current_time)
 
         # Remove driver from spatial_index
         gh = driver.current_location.to_geohash(GEOHASH_PRECISION)
@@ -133,15 +131,13 @@ class Simulator:
     def run(self, rides: List[Ride]) -> Dict:
         """Run the discrete-event simulation over provided `rides`.
 
-        Rides are sorted by request_time_seconds before processing.
+        Rides are expected to arrive already sorted by request_time_seconds before processing.
         Returns a dict with `assignments`, `unassigned`, and `metrics`.
         """
         if not rides:
             logger.info("No rides to simulate.")
             return {"assignments": [], "unassigned": [], "metrics": {}}
 
-        # Rides are expected to arrive already sorted by `main.py`.
-        # `main` owns the ordering responsibility before passing rides here.
         ride_idx = 0
         self.current_time = rides[0].request_time_seconds
         logger.info("Starting simulation: %d rides", len(rides))

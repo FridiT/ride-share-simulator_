@@ -3,7 +3,7 @@ import math
 import pytest
 
 from src.models import Location, Driver, Ride
-from src.logic import BASE_SPEED_KMH, iso8601_to_seconds
+from src.logic import BASE_SPEED_KMH
 
 
 def test_distance_to_same_location_is_zero() -> None:
@@ -186,16 +186,15 @@ def test_ride_creation_valid() -> None:
         id="r1",
         pickup=pickup,
         dropoff=dropoff,
-        request_time_str="2024-05-19T10:30:00Z",
+        request_time_seconds=1716066600.0,
         passenger_rating=4.0,
     )
 
     assert ride.id == "r1"
     assert ride.pickup == pickup
     assert ride.dropoff == dropoff
-    assert ride.request_time_str == "2024-05-19T10:30:00Z"
+    assert ride.request_time_seconds == 1716066600.0
     assert ride.passenger_rating == 4.0
-    assert ride.request_time_seconds > 0.0
 
 
 def test_ride_creation_invalid_id() -> None:
@@ -207,7 +206,7 @@ def test_ride_creation_invalid_id() -> None:
             id="",
             pickup=pickup,
             dropoff=dropoff,
-            request_time_str="2024-05-19T10:30:00Z",
+            request_time_seconds=1716066600.0,
             passenger_rating=3.5,
         )
 
@@ -221,7 +220,7 @@ def test_ride_creation_invalid_rating_too_low() -> None:
             id="r2",
             pickup=pickup,
             dropoff=dropoff,
-            request_time_str="2024-05-19T10:30:00Z",
+            request_time_seconds=1716066600.0,
             passenger_rating=0.5,
         )
 
@@ -235,7 +234,7 @@ def test_ride_creation_invalid_rating_too_high() -> None:
             id="r3",
             pickup=pickup,
             dropoff=dropoff,
-            request_time_str="2024-05-19T10:30:00Z",
+            request_time_seconds=1716066600.0,
             passenger_rating=5.5,
         )
 
@@ -244,12 +243,12 @@ def test_ride_creation_invalid_request_time() -> None:
     pickup = Location(lat=0.0, lon=0.0)
     dropoff = Location(lat=1.0, lon=1.0)
 
-    with pytest.raises(ValueError, match="Invalid request_time_str"):
+    with pytest.raises(ValueError, match="Ride request_time_seconds must be a non-negative finite timestamp"):
         Ride(
             id="r4",
             pickup=pickup,
             dropoff=dropoff,
-            request_time_str="not-a-timestamp",
+            request_time_seconds=float("nan"),
             passenger_rating=3.0,
         )
 
@@ -261,7 +260,7 @@ def test_ride_calculate_distance() -> None:
         id="r5",
         pickup=pickup,
         dropoff=dropoff,
-        request_time_str="2024-05-19T10:30:00Z",
+        request_time_seconds=1716066600.0,
         passenger_rating=3.5,
     )
 
@@ -276,7 +275,7 @@ def test_ride_calculate_estimated_time_with_default_speed() -> None:
         id="r6",
         pickup=pickup,
         dropoff=dropoff,
-        request_time_str="2024-05-19T10:30:00Z",
+        request_time_seconds=1716066600.0,
         passenger_rating=4.0,
     )
 
@@ -292,7 +291,7 @@ def test_ride_calculate_estimated_time_with_custom_speed() -> None:
         id="r7",
         pickup=pickup,
         dropoff=dropoff,
-        request_time_str="2024-05-19T10:30:00Z",
+        request_time_seconds=1716066600.0,
         passenger_rating=3.8,
     )
 
@@ -308,7 +307,7 @@ def test_ride_calculate_estimated_time_invalid_speed() -> None:
         id="r8",
         pickup=pickup,
         dropoff=dropoff,
-        request_time_str="2024-05-19T10:30:00Z",
+        request_time_seconds=1716066600.0,
         passenger_rating=4.2,
     )
 
@@ -323,29 +322,28 @@ def test_ride_repr() -> None:
         id="r9",
         pickup=pickup,
         dropoff=dropoff,
-        request_time_str="2024-05-19T10:30:00Z",
+        request_time_seconds=1716066600.0,
         passenger_rating=4.5,
     )
 
     repr_str = repr(ride)
     assert "r9" in repr_str
     assert "51.5074" in repr_str or "51" in repr_str
-    assert "2024-05-19T10:30:00Z" in repr_str
+    assert "request_time_seconds=1716066600.0" in repr_str
     assert "4.5" in repr_str
 
 
 def test_ride_request_time_conversion() -> None:
     pickup = Location(lat=0.0, lon=0.0)
     dropoff = Location(lat=1.0, lon=1.0)
-    timestamp_str = "2024-05-19T10:30:00Z"
+    timestamp_seconds = 1716066600.0
     ride = Ride(
         id="r10",
         pickup=pickup,
         dropoff=dropoff,
-        request_time_str=timestamp_str,
+        request_time_seconds=timestamp_seconds,
         passenger_rating=3.5,
     )
 
-    expected_seconds = iso8601_to_seconds(timestamp_str)
-    assert ride.request_time_seconds == expected_seconds
+    assert ride.request_time_seconds == timestamp_seconds
 

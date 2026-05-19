@@ -11,7 +11,7 @@ def test_get_candidate_drivers_filters_by_vehicle_type():
         id="r1",
         pickup=pickup,
         dropoff=dropoff,
-        request_time_str="2024-01-01T00:00:00Z",
+        request_time_seconds=1704067200.0,
         passenger_rating=4.0,
     )
     # requirement: needs an SUV
@@ -51,7 +51,7 @@ def test_weighted_score_strategy_prefers_better_driver():
         id="r2",
         pickup=pickup,
         dropoff=dropoff,
-        request_time_str="2024-01-01T00:00:00Z",
+        request_time_seconds=1704067200.0,
         passenger_rating=4.0,
         vehicle_type="private",
     )

@@ -3,7 +3,7 @@ import math
 
 import pygeohash
 
-from src.logic import BASE_SPEED_KMH, iso8601_to_seconds, haversine
+from src.logic import BASE_SPEED_KMH, haversine
 
 
 @dataclass(frozen=True)
@@ -82,33 +82,30 @@ class Driver:
 class Ride:
     """Represents a passenger ride request with pickup/dropoff locations and ratings.
     
-    The request_time_str preserves the original ISO-8601 string for output reporting,
-    while request_time_seconds is the Unix timestamp used for simulation calculations.
+    The request_time_seconds field is the request timestamp in Unix seconds.
     """
 
     id: str
     pickup: Location
     dropoff: Location
-    request_time_str: str
+    request_time_seconds: float
     passenger_rating: float
     vehicle_type: str = "private"
-    request_time_seconds: float = field(default=0.0, init=False)
 
     def __post_init__(self) -> None:
-        """Validate ride fields and convert request_time_str to seconds."""
+        """Validate ride fields and numeric request timestamp."""
         if not self.id:
             raise ValueError("Ride id cannot be empty.")
         if not 1.0 <= self.passenger_rating <= 5.0:
             raise ValueError("Passenger rating must be between 1.0 and 5.0.")
 
-        # Validate vehicle_type: supported types are 'private' and 'suv'
         if self.vehicle_type not in ("private", "suv"):
             raise ValueError("vehicle_type must be one of: 'private', 'suv'.")
 
-        try:
-            object.__setattr__(self, "request_time_seconds", iso8601_to_seconds(self.request_time_str))
-        except ValueError as e:
-            raise ValueError(f"Invalid request_time_str for ride {self.id}: {self.request_time_str}") from e
+        if not isinstance(self.request_time_seconds, (int, float)) or isinstance(self.request_time_seconds, bool):
+            raise ValueError("Ride request_time_seconds must be a numeric timestamp.")
+        if self.request_time_seconds < 0.0 or math.isnan(self.request_time_seconds) or math.isinf(self.request_time_seconds):
+            raise ValueError("Ride request_time_seconds must be a non-negative finite timestamp.")
 
     def calculate_distance(self) -> float:
         """Calculate the distance from pickup to dropoff in kilometers.
@@ -141,5 +138,5 @@ class Ride:
         """Return a readable representation of the ride."""
         return (
             f"Ride(id={self.id!r}, pickup={self.pickup}, dropoff={self.dropoff}, "
-            f"request_time_str={self.request_time_str!r}, passenger_rating={self.passenger_rating})"
+            f"request_time_seconds={self.request_time_seconds}, passenger_rating={self.passenger_rating})"
         )
