@@ -27,13 +27,13 @@ class Simulator:
     """Discrete-event simulator that assigns drivers to rides.
 
     The simulator advances time only to the next ride arrival or the next
-    driver release event. Drivers are stored in a geohash-based spatial index
+    driver release event. Drivers are stored in a geohash-based availability index
     while available and in a min-heap (`busy_drivers`) while servicing rides.
     """
 
     def __init__(self, strategy: BaseStrategy):
         self.strategy = strategy
-        self.spatial_index: Dict[str, List[Driver]] = defaultdict(list)
+        self.available_drivers_by_geohash: Dict[str, List[Driver]] = defaultdict(list)
         self.busy_drivers: List[Driver] = []  # heap by available_at via Driver.__lt__
         self.pending_rides: deque[Ride] = deque()
         self.current_time: float = 0.0
@@ -47,10 +47,10 @@ class Simulator:
 
     # --- State management -------------------------------------------------
     def add_driver(self, driver: Driver) -> None:
-        """Add a driver to the spatial index (mark as available)."""
-        gh = driver.current_location.to_geohash(GEOHASH_PRECISION)
-        self.spatial_index[gh].append(driver)
-        logger.debug("Added driver %s to spatial_index at geohash %s", driver.id, gh)
+        """Add a driver to the availability index (mark as available)."""
+        geohash_key = driver.current_location.to_geohash(GEOHASH_PRECISION)
+        self.available_drivers_by_geohash[geohash_key].append(driver)
+        logger.debug("Added driver %s to availability index at geohash %s", driver.id, geohash_key)
 
     def add_ride_to_queue(self, ride: Ride) -> None:
         """Append a ride to the pending queue."""
@@ -58,13 +58,13 @@ class Simulator:
         logger.debug("Queued ride %s (request_time=%s)", ride.id, getattr(ride, 'request_time_str', ''))
 
     def release_available_drivers(self, current_time: float) -> None:
-        """Move drivers whose `available_at` <= current_time back into spatial_index."""
+        """Move drivers whose `available_at` <= current_time back into availability index."""
         while self.busy_drivers and self.busy_drivers[0].available_at <= current_time:
             driver = heapq.heappop(self.busy_drivers)
             # driver.current_location is expected to be updated to dropoff at assignment
-            gh = driver.current_location.to_geohash(GEOHASH_PRECISION)
-            self.spatial_index[gh].append(driver)
-            logger.debug("Released driver %s back to spatial_index at geohash %s (available_at=%.1f)", driver.id, gh, driver.available_at)
+            geohash_key = driver.current_location.to_geohash(GEOHASH_PRECISION)
+            self.available_drivers_by_geohash[geohash_key].append(driver)
+            logger.debug("Released driver %s back to availability index at geohash %s (available_at=%.1f)", driver.id, geohash_key, driver.available_at)
 
     # --- Candidate selection ----------------------------------------------
     def get_candidate_drivers(self, ride: Ride) -> List[Driver]:
@@ -76,8 +76,8 @@ class Simulator:
         required_vehicle = ride.vehicle_type
 
         candidates: List[Driver] = []
-        for gh in neighborhood:
-            for driver in list(self.spatial_index.get(gh, [])):
+        for geohash_key in neighborhood:
+            for driver in list(self.available_drivers_by_geohash.get(geohash_key, [])):
                 # Enforce vehicle type match
                 if driver.vehicle_type != required_vehicle:
                     continue
@@ -106,10 +106,10 @@ class Simulator:
         self.assignments.append({"timestamp": external_timestamp, "ride_id": ride.id, "driver_id": driver.id})
         logger.info("Assigned ride %s to driver %s at timestamp %s", ride.id, driver.id, external_timestamp)
 
-        # Remove driver from spatial_index
-        gh = driver.current_location.to_geohash(GEOHASH_PRECISION)
-        if driver in self.spatial_index.get(gh, []):
-            self.spatial_index[gh].remove(driver)
+        # Remove driver from availability index
+        geohash_key = driver.current_location.to_geohash(GEOHASH_PRECISION)
+        if driver in self.available_drivers_by_geohash.get(geohash_key, []):
+            self.available_drivers_by_geohash[geohash_key].remove(driver)
 
         # Travel times
         pickup_distance_km = driver.current_location.distance_to(ride.pickup)
@@ -186,8 +186,8 @@ class Simulator:
 
         # Move remaining pending rides to unassigned
         while self.pending_rides:
-            r = self.pending_rides.popleft()
-            self.unassigned.append(r.id)
+            pending_ride = self.pending_rides.popleft()
+            self.unassigned.append(pending_ride.id)
         results = {"assignments": self.assignments, "unassigned": self.unassigned, "metrics": self.calculate_metrics()}
         logger.info("Simulation finished: %d assigned, %d unassigned", len(self.assignments), len(self.unassigned))
         return results

@@ -1,5 +1,6 @@
 from src.models import Location, Driver, Ride
 from src.simulator import Simulator
+from src.strategies.shortest import ShortestDistanceStrategy
 from src.strategies.weighted import WeightedScoreStrategy
 
 
@@ -75,6 +76,40 @@ def test_weighted_score_strategy_prefers_better_driver():
     winner = strategy.match(ride, [closer_lower_rating, farther_better_rating])
 
     assert winner is closer_lower_rating
+
+
+def test_shortest_distance_strategy_prefers_closest_driver():
+    pickup = Location(10.0, 10.0)
+    dropoff = Location(10.05, 10.05)
+
+    ride = Ride(
+        id="r_shortest",
+        pickup=pickup,
+        dropoff=dropoff,
+        request_time_seconds=1704067200.0,
+        passenger_rating=4.0,
+        vehicle_type="private",
+    )
+
+    farther_driver = Driver(
+        id="d_far",
+        name="FarDriver",
+        rating=5.0,
+        vehicle_type="private",
+        current_location=Location(10.08, 10.08),
+    )
+    closer_driver = Driver(
+        id="d_close",
+        name="CloseDriver",
+        rating=3.0,
+        vehicle_type="private",
+        current_location=Location(10.01, 10.01),
+    )
+
+    strategy = ShortestDistanceStrategy()
+    winner = strategy.match(ride, [farther_driver, closer_driver])
+
+    assert winner is closer_driver
 
 
 def test_simulator_assignment_timestamp_is_formatted_string():

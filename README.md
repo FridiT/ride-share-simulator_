@@ -143,6 +143,7 @@ The simulator writes log files to the `logs/` directory.
   - `distance` prioritizes shorter trips to improve responsiveness and free drivers sooner,
   - `ride_id` makes ordering deterministic when other values tie.
 - Driver availability is modeled by data structure membership, not a separate availability flag.
+- Core runtime structures are: geohash availability index (`available_drivers_by_geohash`) for available drivers, min-heap (`busy_drivers`) ordered by `available_at` for busy drivers, and FIFO queue (`pending_rides`) for unmatched ride requests.
 - Candidate search first scans the 9-cell geohash neighborhood as a spatial prefilter, then applies the configurable `MAX_PICKUP_DISTANCE_KM` radius as the actual pickup distance constraint.
 - Ride requests time out only after exceeding 300 seconds (5 minutes) in the pending queue and are marked unassigned.
 - Weighted matching uses `distance_weight=0.3` and `rating_weight=0.7`, with normalization for both components.
@@ -150,6 +151,6 @@ The simulator writes log files to the `logs/` directory.
 
 ## Notes
 
-- Drivers are considered available when stored in the spatial index.
+- Drivers are considered available when stored in the geohash availability index.
 - The simulator advances time only to the next ride arrival or driver release event.
 - A ride is marked unassigned after timing out or if no driver is available by simulation end.

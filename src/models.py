@@ -37,7 +37,7 @@ class Driver:
     """Represents a ride-share driver with mutable location tracking.
     
     The driver's availability is managed externally by the Simulator:
-    presence in spatial_index indicates availability, while presence
+    presence in available_drivers_by_geohash indicates availability, while presence
     in busy_drivers heap indicates the driver is currently on a ride.
     """
 
