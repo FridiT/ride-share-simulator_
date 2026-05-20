@@ -1,4 +1,5 @@
 from src.models import Location, Driver, Ride
+from src.parser import parse_input_json
 from src.simulator import Simulator
 from src.strategies.shortest import ShortestDistanceStrategy
 from src.strategies.weighted import WeightedScoreStrategy
@@ -136,3 +137,22 @@ def test_simulator_assignment_timestamp_is_formatted_string():
 
     assert len(results["assignments"]) == 1
     assert results["assignments"][0]["timestamp"] == "2024-01-01T00:00:00Z"
+
+
+def test_manual_walkthrough_input_produces_expected_regression_outcome():
+    drivers, rides = parse_input_json("data/manual_walkthrough_input.json")
+    rides.sort(key=lambda ride: (ride.request_time_seconds, ride.calculate_distance(), ride.id))
+
+    sim = Simulator(WeightedScoreStrategy())
+    for driver in drivers:
+        sim.add_driver(driver)
+
+    results = sim.run(rides)
+
+    assigned_pairs = [(entry["ride_id"], entry["driver_id"]) for entry in results["assignments"]]
+    assert assigned_pairs == [
+        ("r3_suv_long", "d_suv"),
+        ("r1_private_long", "d_private"),
+        ("r5_wait_then_assign", "d_private"),
+    ]
+    assert results["unassigned"] == ["r2_private_collision", "r4_far_out_of_radius"]

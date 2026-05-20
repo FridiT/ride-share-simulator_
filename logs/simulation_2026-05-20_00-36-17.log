@@ -1,0 +1,35 @@
+2026-05-20 03:36:17,062 INFO __main__ Starting Ride Share Simulator
+2026-05-20 03:36:17,063 INFO __main__ Input: data/manual_walkthrough_input.json
+2026-05-20 03:36:17,064 INFO __main__ Strategy: weighted
+2026-05-20 03:36:17,064 INFO __main__ Output: output/manual_walkthrough_results.json
+2026-05-20 03:36:17,153 INFO __main__ Loaded 2 drivers and 5 rides from input
+2026-05-20 03:36:17,153 DEBUG src.simulator Added driver d_private to availability index at geohash sv8wx
+2026-05-20 03:36:17,154 DEBUG src.simulator Added driver d_suv to availability index at geohash sv8wx
+2026-05-20 03:36:17,154 INFO src.simulator Starting simulation: 5 rides
+2026-05-20 03:36:17,157 DEBUG src.simulator Found 1 candidate drivers near geohash sv8wx (required_vehicle=suv)
+2026-05-20 03:36:17,160 INFO src.simulator Assigned ride r3_suv_long to driver d_suv at timestamp 2025-01-01T08:00:00Z
+2026-05-20 03:36:17,161 DEBUG src.simulator Pickup travel: ride=r3_suv_long driver=d_suv minutes=0.00
+2026-05-20 03:36:17,161 DEBUG src.simulator Found 1 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:36:17,161 INFO src.simulator Assigned ride r1_private_long to driver d_private at timestamp 2025-01-01T08:00:00Z
+2026-05-20 03:36:17,162 DEBUG src.simulator Pickup travel: ride=r1_private_long driver=d_private minutes=0.00
+2026-05-20 03:36:17,162 DEBUG src.simulator Found 0 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:36:17,162 DEBUG src.simulator Queued arriving ride r2_private_collision at 2025-01-01T08:00:00Z (pending_queue_size=1)
+2026-05-20 03:36:17,163 DEBUG src.simulator Found 0 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:36:17,163 DEBUG src.simulator Found 0 candidate drivers near geohash sv8xx (required_vehicle=private)
+2026-05-20 03:36:17,163 DEBUG src.simulator Queued arriving ride r4_far_out_of_radius at 2025-01-01T08:01:00Z (pending_queue_size=2)
+2026-05-20 03:36:17,164 DEBUG src.simulator Released driver d_suv back to availability index at geohash sv8wx (available_at=1735718666.9)
+2026-05-20 03:36:17,164 DEBUG src.simulator Found 0 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:36:17,164 DEBUG src.simulator Found 0 candidate drivers near geohash sv8xx (required_vehicle=private)
+2026-05-20 03:36:17,165 DEBUG src.simulator Found 0 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:36:17,165 INFO src.simulator Unassigned ride r2_private_collision after timeout at simulation time 2025-01-01T08:06:00Z
+2026-05-20 03:36:17,165 DEBUG src.simulator Found 0 candidate drivers near geohash sv8xx (required_vehicle=private)
+2026-05-20 03:36:17,166 DEBUG src.simulator Found 0 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:36:17,166 DEBUG src.simulator Queued arriving ride r5_wait_then_assign at 2025-01-01T08:06:00Z (pending_queue_size=2)
+2026-05-20 03:36:17,167 DEBUG src.simulator Released driver d_private back to availability index at geohash sv8wx (available_at=1735718800.3)
+2026-05-20 03:36:17,168 DEBUG src.simulator Found 0 candidate drivers near geohash sv8xx (required_vehicle=private)
+2026-05-20 03:36:17,168 INFO src.simulator Unassigned ride r4_far_out_of_radius after timeout at simulation time 2025-01-01T08:06:40Z
+2026-05-20 03:36:17,168 DEBUG src.simulator Found 1 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:36:17,169 INFO src.simulator Assigned ride r5_wait_then_assign to driver d_private at timestamp 2025-01-01T08:06:40Z
+2026-05-20 03:36:17,169 DEBUG src.simulator Pickup travel: ride=r5_wait_then_assign driver=d_private minutes=6.54
+2026-05-20 03:36:17,169 INFO src.simulator Simulation finished: 3 assigned, 2 unassigned
+2026-05-20 03:36:17,174 INFO __main__ Simulation complete. Results written to output/manual_walkthrough_results.json

@@ -166,6 +166,11 @@ class Simulator:
                 else:
                     # Check timeout
                     if is_timed_out(pending.request_time_seconds, self.current_time):
+                        logger.info(
+                            "Unassigned ride %s after timeout at simulation time %s",
+                            pending.id,
+                            seconds_to_timestamp_str(self.current_time),
+                        )
                         self.unassigned.append(pending.id)
                     else:
                         self.pending_rides.append(pending)
@@ -179,6 +184,12 @@ class Simulator:
                     self.assign_ride(ride, driver)
                 else:
                     self.pending_rides.append(ride)
+                    logger.debug(
+                        "Queued arriving ride %s at %s (pending_queue_size=%d)",
+                        ride.id,
+                        seconds_to_timestamp_str(self.current_time),
+                        len(self.pending_rides),
+                    )
 
             # If no events left, break
             if next_event_time == float("inf"):
@@ -187,6 +198,10 @@ class Simulator:
         # Move remaining pending rides to unassigned
         while self.pending_rides:
             pending_ride = self.pending_rides.popleft()
+            logger.info(
+                "Unassigned ride %s at end of simulation (no assignment found)",
+                pending_ride.id,
+            )
             self.unassigned.append(pending_ride.id)
         results = {"assignments": self.assignments, "unassigned": self.unassigned, "metrics": self.calculate_metrics()}
         logger.info("Simulation finished: %d assigned, %d unassigned", len(self.assignments), len(self.unassigned))

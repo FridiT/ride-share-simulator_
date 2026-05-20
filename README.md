@@ -148,6 +148,7 @@ The simulator writes log files to the `logs/` directory.
 - Ride requests time out only after exceeding 300 seconds (5 minutes) in the pending queue and are marked unassigned.
 - Weighted matching uses `distance_weight=0.3` and `rating_weight=0.7`, with normalization for both components.
 - Invalid input records are skipped with warnings rather than causing a fatal error.
+- The repository includes sample `logs/` and `output/` artifacts to make manual comparison and exercise validation easier.
 
 ## Notes
 

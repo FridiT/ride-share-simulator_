@@ -1,0 +1,733 @@
+2026-05-20 03:33:51,595 INFO __main__ Starting Ride Share Simulator
+2026-05-20 03:33:51,596 INFO __main__ Input: data/manual_walkthrough_input.json
+2026-05-20 03:33:51,597 INFO __main__ Strategy: weighted
+2026-05-20 03:33:51,597 INFO __main__ Output: output/manual_walkthrough_results.json
+2026-05-20 03:33:51,757 INFO __main__ Loaded 2 drivers and 5 rides from input
+2026-05-20 03:33:51,758 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,758 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:51,759 DEBUG src.simulator Added driver d_private to availability index at geohash sv8wx
+2026-05-20 03:33:51,759 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,760 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:51,760 DEBUG src.simulator Added driver d_suv to availability index at geohash sv8wx
+2026-05-20 03:33:51,760 INFO src.simulator Starting simulation: 5 rides
+2026-05-20 03:33:51,761 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,761 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:51,761 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction right
+2026-05-20 03:33:51,761 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,761 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,762 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,762 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,762 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,763 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,763 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,763 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,763 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y8
+2026-05-20 03:33:51,764 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction left
+2026-05-20 03:33:51,764 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,764 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,764 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,765 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8ww
+2026-05-20 03:33:51,765 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction top
+2026-05-20 03:33:51,765 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,765 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,771 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,774 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wz
+2026-05-20 03:33:51,776 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction bottom
+2026-05-20 03:33:51,776 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,777 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,777 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,777 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wr
+2026-05-20 03:33:51,778 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction right
+2026-05-20 03:33:51,778 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:51,778 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,779 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,780 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,781 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,782 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,782 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,787 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,788 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8yb
+2026-05-20 03:33:51,789 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction left
+2026-05-20 03:33:51,790 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:51,790 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,791 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,792 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wy
+2026-05-20 03:33:51,792 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction right
+2026-05-20 03:33:51,793 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:51,793 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,795 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,795 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,796 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,796 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,797 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,797 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,798 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y2
+2026-05-20 03:33:51,798 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction left
+2026-05-20 03:33:51,798 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:51,799 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,799 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,803 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wq
+2026-05-20 03:33:51,804 DEBUG src.simulator Found 1 candidate drivers near geohash sv8wx (required_vehicle=suv)
+2026-05-20 03:33:51,805 INFO src.simulator Assigned ride r3_suv_long to driver d_suv at timestamp 2025-01-01T08:00:00Z
+2026-05-20 03:33:51,807 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,808 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:51,808 DEBUG src.simulator Pickup travel: ride=r3_suv_long driver=d_suv minutes=0.00
+2026-05-20 03:33:51,809 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,809 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:51,809 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction right
+2026-05-20 03:33:51,810 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,810 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,810 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,811 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,811 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,811 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,812 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,812 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,812 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y8
+2026-05-20 03:33:51,813 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction left
+2026-05-20 03:33:51,813 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,813 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,814 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,814 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8ww
+2026-05-20 03:33:51,815 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction top
+2026-05-20 03:33:51,815 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,815 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,823 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,824 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wz
+2026-05-20 03:33:51,824 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction bottom
+2026-05-20 03:33:51,825 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,825 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,825 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,826 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wr
+2026-05-20 03:33:51,826 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction right
+2026-05-20 03:33:51,826 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:51,826 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,827 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,827 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,827 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,828 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,828 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,828 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,828 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8yb
+2026-05-20 03:33:51,829 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction left
+2026-05-20 03:33:51,829 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:51,829 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,830 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,830 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wy
+2026-05-20 03:33:51,831 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction right
+2026-05-20 03:33:51,831 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:51,831 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,832 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,836 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,837 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,838 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,838 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,838 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,839 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y2
+2026-05-20 03:33:51,840 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction left
+2026-05-20 03:33:51,840 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:51,840 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,840 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,841 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wq
+2026-05-20 03:33:51,841 DEBUG src.simulator Found 1 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:33:51,841 INFO src.simulator Assigned ride r1_private_long to driver d_private at timestamp 2025-01-01T08:00:00Z
+2026-05-20 03:33:51,842 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,842 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:51,842 DEBUG src.simulator Pickup travel: ride=r1_private_long driver=d_private minutes=0.00
+2026-05-20 03:33:51,843 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,843 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:51,844 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction right
+2026-05-20 03:33:51,844 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,844 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,844 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,845 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,845 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,845 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,846 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,846 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,846 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y8
+2026-05-20 03:33:51,847 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction left
+2026-05-20 03:33:51,847 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,848 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,849 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,851 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8ww
+2026-05-20 03:33:51,852 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction top
+2026-05-20 03:33:51,852 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,853 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,853 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,854 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wz
+2026-05-20 03:33:51,855 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction bottom
+2026-05-20 03:33:51,855 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,856 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,856 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,856 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wr
+2026-05-20 03:33:51,857 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction right
+2026-05-20 03:33:51,857 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:51,857 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,857 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,858 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,858 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,858 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,858 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,859 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,859 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8yb
+2026-05-20 03:33:51,859 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction left
+2026-05-20 03:33:51,859 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:51,862 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,862 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,863 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wy
+2026-05-20 03:33:51,863 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction right
+2026-05-20 03:33:51,863 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:51,864 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,864 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,864 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,864 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,865 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,865 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,866 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,868 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y2
+2026-05-20 03:33:51,869 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction left
+2026-05-20 03:33:51,869 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:51,870 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,872 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,873 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wq
+2026-05-20 03:33:51,874 DEBUG src.simulator Found 0 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:33:51,874 DEBUG src.simulator Queued arriving ride r2_private_collision at 2025-01-01T08:00:00Z (pending_queue_size=1)
+2026-05-20 03:33:51,875 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,875 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:51,875 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction right
+2026-05-20 03:33:51,876 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,876 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,877 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,877 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,878 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,878 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,878 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,878 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,879 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y8
+2026-05-20 03:33:51,879 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction left
+2026-05-20 03:33:51,879 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,880 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,880 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,880 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8ww
+2026-05-20 03:33:51,880 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction top
+2026-05-20 03:33:51,881 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,881 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,881 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,882 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wz
+2026-05-20 03:33:51,882 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction bottom
+2026-05-20 03:33:51,882 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,889 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,890 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,890 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wr
+2026-05-20 03:33:51,891 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction right
+2026-05-20 03:33:51,891 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:51,891 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,891 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,892 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,892 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,892 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,893 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,893 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,893 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8yb
+2026-05-20 03:33:51,894 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction left
+2026-05-20 03:33:51,894 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:51,894 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,895 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,895 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wy
+2026-05-20 03:33:51,896 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction right
+2026-05-20 03:33:51,896 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:51,896 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,897 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,897 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,897 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,898 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,898 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,898 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,899 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y2
+2026-05-20 03:33:51,899 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction left
+2026-05-20 03:33:51,902 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:51,902 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,903 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,903 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wq
+2026-05-20 03:33:51,904 DEBUG src.simulator Found 0 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:33:51,904 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.285300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,905 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8xx
+2026-05-20 03:33:51,906 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction right
+2026-05-20 03:33:51,906 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:51,907 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,907 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,907 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:51,908 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:51,908 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,908 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,909 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:51,909 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z8
+2026-05-20 03:33:51,909 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction left
+2026-05-20 03:33:51,909 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:51,910 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,910 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,910 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xw
+2026-05-20 03:33:51,911 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction top
+2026-05-20 03:33:51,912 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:51,913 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,913 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,914 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xz
+2026-05-20 03:33:51,914 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction bottom
+2026-05-20 03:33:51,914 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:51,915 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,915 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,915 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xr
+2026-05-20 03:33:51,915 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xz in direction right
+2026-05-20 03:33:51,917 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=z
+2026-05-20 03:33:51,918 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,919 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,919 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:51,920 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:51,922 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,923 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,925 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:51,926 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8zb
+2026-05-20 03:33:51,926 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xz in direction left
+2026-05-20 03:33:51,926 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=z
+2026-05-20 03:33:51,926 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,927 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,927 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xy
+2026-05-20 03:33:51,927 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xr in direction right
+2026-05-20 03:33:51,928 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=r
+2026-05-20 03:33:51,929 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,929 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,929 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:51,930 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:51,930 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,930 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,931 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:51,931 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z2
+2026-05-20 03:33:51,932 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xr in direction left
+2026-05-20 03:33:51,932 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=r
+2026-05-20 03:33:51,932 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,939 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,940 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xq
+2026-05-20 03:33:51,940 DEBUG src.simulator Found 0 candidate drivers near geohash sv8xx (required_vehicle=private)
+2026-05-20 03:33:51,941 DEBUG src.simulator Queued arriving ride r4_far_out_of_radius at 2025-01-01T08:01:00Z (pending_queue_size=2)
+2026-05-20 03:33:51,941 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.105300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,941 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:51,941 DEBUG src.simulator Released driver d_suv back to availability index at geohash sv8wx (available_at=1735718666.9)
+2026-05-20 03:33:51,942 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,942 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:51,942 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction right
+2026-05-20 03:33:51,943 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,943 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,943 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,943 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,944 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,945 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,946 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,946 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,947 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y8
+2026-05-20 03:33:51,948 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction left
+2026-05-20 03:33:51,948 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,948 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,949 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,952 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8ww
+2026-05-20 03:33:51,954 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction top
+2026-05-20 03:33:51,955 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,956 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,957 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,958 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wz
+2026-05-20 03:33:51,958 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction bottom
+2026-05-20 03:33:51,958 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:51,959 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,959 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,959 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wr
+2026-05-20 03:33:51,959 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction right
+2026-05-20 03:33:51,960 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:51,961 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,961 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,961 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,962 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,962 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,963 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,963 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,964 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8yb
+2026-05-20 03:33:51,964 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction left
+2026-05-20 03:33:51,964 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:51,964 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,965 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,965 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wy
+2026-05-20 03:33:51,965 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction right
+2026-05-20 03:33:51,968 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:51,968 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,969 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,969 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:51,971 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:51,972 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,972 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,972 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:51,973 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y2
+2026-05-20 03:33:51,973 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction left
+2026-05-20 03:33:51,974 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:51,974 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,975 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,975 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wq
+2026-05-20 03:33:51,975 DEBUG src.simulator Found 0 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:33:51,976 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.285300, lon=34.781800 with precision 5
+2026-05-20 03:33:51,976 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8xx
+2026-05-20 03:33:51,976 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction right
+2026-05-20 03:33:51,977 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:51,977 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,977 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,979 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:51,979 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:51,979 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,980 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,980 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:51,980 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z8
+2026-05-20 03:33:51,981 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction left
+2026-05-20 03:33:51,981 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:51,981 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,982 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,982 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xw
+2026-05-20 03:33:51,985 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction top
+2026-05-20 03:33:51,986 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:51,987 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,987 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,988 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xz
+2026-05-20 03:33:51,988 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction bottom
+2026-05-20 03:33:51,989 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:51,989 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,989 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,990 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xr
+2026-05-20 03:33:51,990 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xz in direction right
+2026-05-20 03:33:51,990 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=z
+2026-05-20 03:33:51,991 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,991 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,991 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:51,992 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:51,992 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,992 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,993 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:51,993 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8zb
+2026-05-20 03:33:51,994 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xz in direction left
+2026-05-20 03:33:51,994 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=z
+2026-05-20 03:33:51,994 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,995 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,995 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xy
+2026-05-20 03:33:51,995 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xr in direction right
+2026-05-20 03:33:51,996 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=r
+2026-05-20 03:33:51,996 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:51,996 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:51,997 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:51,997 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:51,997 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:51,998 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:51,998 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:51,998 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z2
+2026-05-20 03:33:51,999 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xr in direction left
+2026-05-20 03:33:52,001 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=r
+2026-05-20 03:33:52,002 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,002 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,003 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xq
+2026-05-20 03:33:52,004 DEBUG src.simulator Found 0 candidate drivers near geohash sv8xx (required_vehicle=private)
+2026-05-20 03:33:52,005 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085300, lon=34.781800 with precision 5
+2026-05-20 03:33:52,005 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:52,006 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction right
+2026-05-20 03:33:52,007 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,007 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,007 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,008 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:52,008 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:52,008 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,009 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,009 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:52,009 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y8
+2026-05-20 03:33:52,010 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction left
+2026-05-20 03:33:52,010 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,010 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,011 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,011 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8ww
+2026-05-20 03:33:52,011 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction top
+2026-05-20 03:33:52,012 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,012 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,013 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,013 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wz
+2026-05-20 03:33:52,013 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction bottom
+2026-05-20 03:33:52,014 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,014 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,015 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,015 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wr
+2026-05-20 03:33:52,015 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction right
+2026-05-20 03:33:52,015 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:52,017 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,018 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,018 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:52,019 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:52,020 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,020 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,021 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:52,022 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8yb
+2026-05-20 03:33:52,023 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction left
+2026-05-20 03:33:52,023 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:52,024 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,024 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,024 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wy
+2026-05-20 03:33:52,025 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction right
+2026-05-20 03:33:52,025 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:52,026 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,026 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,028 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:52,028 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:52,029 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,029 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,030 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:52,030 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y2
+2026-05-20 03:33:52,030 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction left
+2026-05-20 03:33:52,031 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:52,031 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,031 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,031 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wq
+2026-05-20 03:33:52,032 DEBUG src.simulator Found 0 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:33:52,032 INFO src.simulator Unassigned ride r2_private_collision after timeout at simulation time 2025-01-01T08:06:00Z
+2026-05-20 03:33:52,033 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.285300, lon=34.781800 with precision 5
+2026-05-20 03:33:52,033 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8xx
+2026-05-20 03:33:52,034 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction right
+2026-05-20 03:33:52,035 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:52,035 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,035 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,036 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:52,036 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:52,036 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,037 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,037 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:52,037 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z8
+2026-05-20 03:33:52,038 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction left
+2026-05-20 03:33:52,038 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:52,038 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,038 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,039 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xw
+2026-05-20 03:33:52,039 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction top
+2026-05-20 03:33:52,039 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:52,040 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,040 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,040 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xz
+2026-05-20 03:33:52,041 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction bottom
+2026-05-20 03:33:52,041 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:52,041 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,041 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,042 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xr
+2026-05-20 03:33:52,042 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xz in direction right
+2026-05-20 03:33:52,042 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=z
+2026-05-20 03:33:52,043 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,043 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,044 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:52,044 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:52,045 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,045 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,045 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:52,046 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8zb
+2026-05-20 03:33:52,046 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xz in direction left
+2026-05-20 03:33:52,046 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=z
+2026-05-20 03:33:52,047 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,047 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,048 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xy
+2026-05-20 03:33:52,048 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xr in direction right
+2026-05-20 03:33:52,049 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=r
+2026-05-20 03:33:52,049 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,050 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,051 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:52,051 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:52,058 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,059 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,059 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:52,060 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z2
+2026-05-20 03:33:52,060 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xr in direction left
+2026-05-20 03:33:52,061 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=r
+2026-05-20 03:33:52,061 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,061 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,062 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xq
+2026-05-20 03:33:52,062 DEBUG src.simulator Found 0 candidate drivers near geohash sv8xx (required_vehicle=private)
+2026-05-20 03:33:52,062 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085900, lon=34.782200 with precision 5
+2026-05-20 03:33:52,063 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:52,063 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction right
+2026-05-20 03:33:52,064 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,065 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,073 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,074 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:52,074 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:52,075 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,075 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,075 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:52,076 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y8
+2026-05-20 03:33:52,076 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction left
+2026-05-20 03:33:52,076 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,077 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,077 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,077 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8ww
+2026-05-20 03:33:52,078 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction top
+2026-05-20 03:33:52,078 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,079 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,081 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,081 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wz
+2026-05-20 03:33:52,081 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction bottom
+2026-05-20 03:33:52,082 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,089 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,089 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,089 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wr
+2026-05-20 03:33:52,090 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction right
+2026-05-20 03:33:52,090 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:52,091 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,091 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,091 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:52,091 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:52,092 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,092 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,092 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:52,093 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8yb
+2026-05-20 03:33:52,093 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction left
+2026-05-20 03:33:52,093 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:52,094 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,094 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,095 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wy
+2026-05-20 03:33:52,095 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction right
+2026-05-20 03:33:52,096 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:52,096 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,096 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,096 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:52,097 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:52,097 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,097 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,098 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:52,098 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y2
+2026-05-20 03:33:52,098 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction left
+2026-05-20 03:33:52,099 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:52,102 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,102 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,103 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wq
+2026-05-20 03:33:52,103 DEBUG src.simulator Found 0 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:33:52,104 DEBUG src.simulator Queued arriving ride r5_wait_then_assign at 2025-01-01T08:06:00Z (pending_queue_size=2)
+2026-05-20 03:33:52,105 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.115300, lon=34.781800 with precision 5
+2026-05-20 03:33:52,106 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:52,106 DEBUG src.simulator Released driver d_private back to availability index at geohash sv8wx (available_at=1735718800.3)
+2026-05-20 03:33:52,106 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.285300, lon=34.781800 with precision 5
+2026-05-20 03:33:52,107 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8xx
+2026-05-20 03:33:52,107 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction right
+2026-05-20 03:33:52,107 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:52,107 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,108 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,108 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:52,108 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:52,109 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,109 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,110 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:52,110 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z8
+2026-05-20 03:33:52,110 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction left
+2026-05-20 03:33:52,111 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:52,111 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,112 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,112 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xw
+2026-05-20 03:33:52,113 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction top
+2026-05-20 03:33:52,113 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:52,113 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,113 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,114 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xz
+2026-05-20 03:33:52,114 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xx in direction bottom
+2026-05-20 03:33:52,114 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=x
+2026-05-20 03:33:52,115 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,115 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,115 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xr
+2026-05-20 03:33:52,116 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xz in direction right
+2026-05-20 03:33:52,119 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=z
+2026-05-20 03:33:52,120 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,121 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,122 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:52,122 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:52,123 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,123 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,124 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:52,124 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8zb
+2026-05-20 03:33:52,124 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xz in direction left
+2026-05-20 03:33:52,125 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=z
+2026-05-20 03:33:52,125 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,125 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,126 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xy
+2026-05-20 03:33:52,126 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xr in direction right
+2026-05-20 03:33:52,126 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=r
+2026-05-20 03:33:52,127 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,127 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,128 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8x in direction right
+2026-05-20 03:33:52,128 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=x
+2026-05-20 03:33:52,129 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,129 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,129 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z
+2026-05-20 03:33:52,130 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8z2
+2026-05-20 03:33:52,130 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8xr in direction left
+2026-05-20 03:33:52,130 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8x, last_char=r
+2026-05-20 03:33:52,130 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,131 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,131 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8xq
+2026-05-20 03:33:52,131 DEBUG src.simulator Found 0 candidate drivers near geohash sv8xx (required_vehicle=private)
+2026-05-20 03:33:52,132 INFO src.simulator Unassigned ride r4_far_out_of_radius after timeout at simulation time 2025-01-01T08:06:40Z
+2026-05-20 03:33:52,135 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.085900, lon=34.782200 with precision 5
+2026-05-20 03:33:52,135 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:52,136 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction right
+2026-05-20 03:33:52,137 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,138 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,138 DEBUG pygeohash.pygeohash.neighbor Last character x is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,139 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:52,139 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:52,139 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,140 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,140 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:52,140 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y8
+2026-05-20 03:33:52,141 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction left
+2026-05-20 03:33:52,141 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,141 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,142 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,142 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8ww
+2026-05-20 03:33:52,142 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction top
+2026-05-20 03:33:52,142 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,144 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,144 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,145 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wz
+2026-05-20 03:33:52,145 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wx in direction bottom
+2026-05-20 03:33:52,145 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=x
+2026-05-20 03:33:52,146 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,146 DEBUG pygeohash.pygeohash.neighbor Last character x is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,146 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wr
+2026-05-20 03:33:52,147 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction right
+2026-05-20 03:33:52,147 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:52,147 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,147 DEBUG pygeohash.pygeohash.neighbor Last character z is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,148 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:52,148 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:52,148 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,149 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,153 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:52,153 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8yb
+2026-05-20 03:33:52,154 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wz in direction left
+2026-05-20 03:33:52,154 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=z
+2026-05-20 03:33:52,155 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,156 DEBUG pygeohash.pygeohash.neighbor Last character z is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,156 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wy
+2026-05-20 03:33:52,157 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction right
+2026-05-20 03:33:52,157 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:52,157 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,158 DEBUG pygeohash.pygeohash.neighbor Last character r is on border, recursively finding parent neighbor
+2026-05-20 03:33:52,158 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8w in direction right
+2026-05-20 03:33:52,158 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8, last_char=w
+2026-05-20 03:33:52,159 DEBUG pygeohash.pygeohash.neighbor Using even lookup tables based on hash length
+2026-05-20 03:33:52,159 DEBUG pygeohash.pygeohash.neighbor Last character w is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,160 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y
+2026-05-20 03:33:52,160 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8y2
+2026-05-20 03:33:52,160 DEBUG pygeohash.pygeohash.neighbor Finding adjacent geohash for sv8wr in direction left
+2026-05-20 03:33:52,161 DEBUG pygeohash.pygeohash.neighbor Processing: base=sv8w, last_char=r
+2026-05-20 03:33:52,161 DEBUG pygeohash.pygeohash.neighbor Using odd lookup tables based on hash length
+2026-05-20 03:33:52,161 DEBUG pygeohash.pygeohash.neighbor Last character r is not on border, using direct neighbor lookup
+2026-05-20 03:33:52,162 DEBUG pygeohash.pygeohash.neighbor Found adjacent geohash: sv8wq
+2026-05-20 03:33:52,162 DEBUG src.simulator Found 1 candidate drivers near geohash sv8wx (required_vehicle=private)
+2026-05-20 03:33:52,162 INFO src.simulator Assigned ride r5_wait_then_assign to driver d_private at timestamp 2025-01-01T08:06:40Z
+2026-05-20 03:33:52,163 DEBUG pygeohash.pygeohash.geohash Encoding coordinates: lat=32.115300, lon=34.781800 with precision 5
+2026-05-20 03:33:52,163 DEBUG pygeohash.pygeohash.geohash Encoded to geohash: sv8wx
+2026-05-20 03:33:52,163 DEBUG src.simulator Pickup travel: ride=r5_wait_then_assign driver=d_private minutes=6.54
+2026-05-20 03:33:52,164 INFO src.simulator Simulation finished: 3 assigned, 2 unassigned
+2026-05-20 03:33:52,170 INFO __main__ Simulation complete. Results written to output/manual_walkthrough_results.json

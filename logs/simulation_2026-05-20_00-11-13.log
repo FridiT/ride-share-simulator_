@@ -1,0 +1,10 @@
+2026-05-20 03:11:13,780 INFO __main__ Starting Ride Share Simulator
+2026-05-20 03:11:13,782 INFO __main__ Input: data/manual_walkthrough_input.json
+2026-05-20 03:11:13,783 INFO __main__ Strategy: weighted
+2026-05-20 03:11:13,783 INFO __main__ Output: output/manual_walkthrough_results.json
+2026-05-20 03:11:13,865 INFO src.simulator Starting simulation: 5 rides
+2026-05-20 03:11:13,867 INFO src.simulator Assigned ride r3_suv_long to driver d_suv at timestamp 2025-01-01T08:00:00Z
+2026-05-20 03:11:13,867 INFO src.simulator Assigned ride r1_private_long to driver d_private at timestamp 2025-01-01T08:00:00Z
+2026-05-20 03:11:13,869 INFO src.simulator Assigned ride r5_wait_then_assign to driver d_private at timestamp 2025-01-01T08:06:40Z
+2026-05-20 03:11:13,870 INFO src.simulator Simulation finished: 3 assigned, 2 unassigned
+2026-05-20 03:11:13,871 INFO __main__ Simulation complete. Results written to output/manual_walkthrough_results.json

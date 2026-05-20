@@ -34,6 +34,11 @@ def configure_logging(log_dir: Path, dev_mode: bool) -> None:
         handlers=handlers,
     )
 
+    if dev_mode:
+        # Show DEBUG only for this project, keep third-party loggers quieter.
+        logging.getLogger("__main__").setLevel(logging.DEBUG)
+        logging.getLogger("src").setLevel(logging.DEBUG)
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run the Ride Share Simulator.")
@@ -85,6 +90,8 @@ def main() -> int:
     except Exception as error:
         logger.error("Failed to parse input JSON: %s", error)
         return 1
+
+    logger.info("Loaded %d drivers and %d rides from input", len(drivers), len(rides))
 
     if not drivers:
         logger.warning("No drivers loaded from input.")

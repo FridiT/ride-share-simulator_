@@ -1,0 +1,373 @@
+{
+  "assignments": [
+    {
+      "timestamp": "2025-01-01T08:00:00Z",
+      "ride_id": "ride_1",
+      "driver_id": "driver_26"
+    },
+    {
+      "timestamp": "2025-01-01T08:00:05Z",
+      "ride_id": "ride_2",
+      "driver_id": "driver_27"
+    },
+    {
+      "timestamp": "2025-01-01T08:00:12Z",
+      "ride_id": "ride_3",
+      "driver_id": "driver_24"
+    },
+    {
+      "timestamp": "2025-01-01T08:00:32Z",
+      "ride_id": "ride_4",
+      "driver_id": "driver_28"
+    },
+    {
+      "timestamp": "2025-01-01T08:00:43Z",
+      "ride_id": "ride_5",
+      "driver_id": "driver_19"
+    },
+    {
+      "timestamp": "2025-01-01T08:00:55Z",
+      "ride_id": "ride_6",
+      "driver_id": "driver_15"
+    },
+    {
+      "timestamp": "2025-01-01T08:01:01Z",
+      "ride_id": "ride_7",
+      "driver_id": "driver_18"
+    },
+    {
+      "timestamp": "2025-01-01T08:01:12Z",
+      "ride_id": "ride_8",
+      "driver_id": "driver_21"
+    },
+    {
+      "timestamp": "2025-01-01T08:01:30Z",
+      "ride_id": "ride_9",
+      "driver_id": "driver_1"
+    },
+    {
+      "timestamp": "2025-01-01T08:01:38Z",
+      "ride_id": "ride_10",
+      "driver_id": "driver_23"
+    },
+    {
+      "timestamp": "2025-01-01T08:01:47Z",
+      "ride_id": "ride_11",
+      "driver_id": "driver_9"
+    },
+    {
+      "timestamp": "2025-01-01T08:02:05Z",
+      "ride_id": "ride_13",
+      "driver_id": "driver_12"
+    },
+    {
+      "timestamp": "2025-01-01T08:02:22Z",
+      "ride_id": "ride_14",
+      "driver_id": "driver_14"
+    },
+    {
+      "timestamp": "2025-01-01T08:02:42Z",
+      "ride_id": "ride_15",
+      "driver_id": "driver_11"
+    },
+    {
+      "timestamp": "2025-01-01T08:02:48Z",
+      "ride_id": "ride_16",
+      "driver_id": "driver_3"
+    },
+    {
+      "timestamp": "2025-01-01T08:02:58Z",
+      "ride_id": "ride_17",
+      "driver_id": "driver_7"
+    },
+    {
+      "timestamp": "2025-01-01T08:03:04Z",
+      "ride_id": "ride_18",
+      "driver_id": "driver_16"
+    },
+    {
+      "timestamp": "2025-01-01T08:03:49Z",
+      "ride_id": "ride_22",
+      "driver_id": "driver_8"
+    },
+    {
+      "timestamp": "2025-01-01T08:03:57Z",
+      "ride_id": "ride_23",
+      "driver_id": "driver_2"
+    },
+    {
+      "timestamp": "2025-01-01T08:04:14Z",
+      "ride_id": "ride_25",
+      "driver_id": "driver_6"
+    },
+    {
+      "timestamp": "2025-01-01T08:04:36Z",
+      "ride_id": "ride_27",
+      "driver_id": "driver_29"
+    },
+    {
+      "timestamp": "2025-01-01T08:05:22Z",
+      "ride_id": "ride_31",
+      "driver_id": "driver_4"
+    },
+    {
+      "timestamp": "2025-01-01T08:06:09Z",
+      "ride_id": "ride_34",
+      "driver_id": "driver_5"
+    },
+    {
+      "timestamp": "2025-01-01T08:06:17Z",
+      "ride_id": "ride_35",
+      "driver_id": "driver_20"
+    },
+    {
+      "timestamp": "2025-01-01T08:06:39Z",
+      "ride_id": "ride_37",
+      "driver_id": "driver_17"
+    },
+    {
+      "timestamp": "2025-01-01T08:06:53Z",
+      "ride_id": "ride_38",
+      "driver_id": "driver_22"
+    },
+    {
+      "timestamp": "2025-01-01T08:07:10Z",
+      "ride_id": "ride_39",
+      "driver_id": "driver_25"
+    },
+    {
+      "timestamp": "2025-01-01T08:08:05Z",
+      "ride_id": "ride_43",
+      "driver_id": "driver_13"
+    },
+    {
+      "timestamp": "2025-01-01T08:08:24Z",
+      "ride_id": "ride_45",
+      "driver_id": "driver_30"
+    },
+    {
+      "timestamp": "2025-01-01T08:09:51Z",
+      "ride_id": "ride_51",
+      "driver_id": "driver_19"
+    },
+    {
+      "timestamp": "2025-01-01T08:11:15Z",
+      "ride_id": "ride_59",
+      "driver_id": "driver_26"
+    },
+    {
+      "timestamp": "2025-01-01T08:11:54Z",
+      "ride_id": "ride_62",
+      "driver_id": "driver_10"
+    },
+    {
+      "timestamp": "2025-01-01T08:14:47Z",
+      "ride_id": "ride_48",
+      "driver_id": "driver_24"
+    },
+    {
+      "timestamp": "2025-01-01T08:16:29Z",
+      "ride_id": "ride_56",
+      "driver_id": "driver_16"
+    },
+    {
+      "timestamp": "2025-01-01T08:20:04Z",
+      "ride_id": "ride_67",
+      "driver_id": "driver_15"
+    }
+  ],
+  "unassigned": [
+    "ride_12",
+    "ride_19",
+    "ride_20",
+    "ride_21",
+    "ride_24",
+    "ride_26",
+    "ride_28",
+    "ride_29",
+    "ride_30",
+    "ride_32",
+    "ride_33",
+    "ride_36",
+    "ride_40",
+    "ride_41",
+    "ride_42",
+    "ride_44",
+    "ride_46",
+    "ride_47",
+    "ride_49",
+    "ride_50",
+    "ride_52",
+    "ride_53",
+    "ride_54",
+    "ride_55",
+    "ride_57",
+    "ride_58",
+    "ride_60",
+    "ride_61",
+    "ride_63",
+    "ride_64",
+    "ride_65",
+    "ride_66",
+    "ride_68",
+    "ride_69",
+    "ride_70"
+  ],
+  "metrics": {
+    "global_average_arrival_time": 9.62,
+    "total_assigned": 35,
+    "total_unassigned": 35,
+    "driver_stats": [
+      {
+        "driver_id": "driver_26",
+        "ride_count": 2,
+        "average_arrival_time": 10.19
+      },
+      {
+        "driver_id": "driver_27",
+        "ride_count": 1,
+        "average_arrival_time": 4.7
+      },
+      {
+        "driver_id": "driver_24",
+        "ride_count": 2,
+        "average_arrival_time": 10.57
+      },
+      {
+        "driver_id": "driver_28",
+        "ride_count": 1,
+        "average_arrival_time": 8.5
+      },
+      {
+        "driver_id": "driver_19",
+        "ride_count": 2,
+        "average_arrival_time": 8.5
+      },
+      {
+        "driver_id": "driver_15",
+        "ride_count": 2,
+        "average_arrival_time": 8.74
+      },
+      {
+        "driver_id": "driver_18",
+        "ride_count": 1,
+        "average_arrival_time": 2.62
+      },
+      {
+        "driver_id": "driver_21",
+        "ride_count": 1,
+        "average_arrival_time": 3.79
+      },
+      {
+        "driver_id": "driver_1",
+        "ride_count": 1,
+        "average_arrival_time": 8.95
+      },
+      {
+        "driver_id": "driver_23",
+        "ride_count": 1,
+        "average_arrival_time": 7.39
+      },
+      {
+        "driver_id": "driver_9",
+        "ride_count": 1,
+        "average_arrival_time": 9.95
+      },
+      {
+        "driver_id": "driver_12",
+        "ride_count": 1,
+        "average_arrival_time": 11.69
+      },
+      {
+        "driver_id": "driver_14",
+        "ride_count": 1,
+        "average_arrival_time": 17.37
+      },
+      {
+        "driver_id": "driver_11",
+        "ride_count": 1,
+        "average_arrival_time": 5.82
+      },
+      {
+        "driver_id": "driver_3",
+        "ride_count": 1,
+        "average_arrival_time": 10.05
+      },
+      {
+        "driver_id": "driver_7",
+        "ride_count": 1,
+        "average_arrival_time": 6.25
+      },
+      {
+        "driver_id": "driver_16",
+        "ride_count": 2,
+        "average_arrival_time": 11.87
+      },
+      {
+        "driver_id": "driver_8",
+        "ride_count": 1,
+        "average_arrival_time": 12.89
+      },
+      {
+        "driver_id": "driver_2",
+        "ride_count": 1,
+        "average_arrival_time": 5.72
+      },
+      {
+        "driver_id": "driver_6",
+        "ride_count": 1,
+        "average_arrival_time": 14.54
+      },
+      {
+        "driver_id": "driver_29",
+        "ride_count": 1,
+        "average_arrival_time": 12.74
+      },
+      {
+        "driver_id": "driver_4",
+        "ride_count": 1,
+        "average_arrival_time": 18.34
+      },
+      {
+        "driver_id": "driver_5",
+        "ride_count": 1,
+        "average_arrival_time": 8.53
+      },
+      {
+        "driver_id": "driver_20",
+        "ride_count": 1,
+        "average_arrival_time": 12.79
+      },
+      {
+        "driver_id": "driver_17",
+        "ride_count": 1,
+        "average_arrival_time": 4.17
+      },
+      {
+        "driver_id": "driver_22",
+        "ride_count": 1,
+        "average_arrival_time": 18.39
+      },
+      {
+        "driver_id": "driver_25",
+        "ride_count": 1,
+        "average_arrival_time": 9.86
+      },
+      {
+        "driver_id": "driver_13",
+        "ride_count": 1,
+        "average_arrival_time": 10.32
+      },
+      {
+        "driver_id": "driver_30",
+        "ride_count": 1,
+        "average_arrival_time": 8.51
+      },
+      {
+        "driver_id": "driver_10",
+        "ride_count": 1,
+        "average_arrival_time": 3.07
+      }
+    ]
+  }
+}
