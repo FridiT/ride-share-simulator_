@@ -31,7 +31,7 @@ flowchart TD
     available_at <= current time]
     L --> M[Check rides from the pending queue]
     M --> N[Find candidate drivers
-    geohash neighborhood + max pickup radius]
+    in the geohash neighborhood]
 
     N --> O{Any candidates?}
     O -- No --> P[Keep ride pending]
