@@ -7,7 +7,7 @@ flowchart TD
     A[Start CLI in main.py] --> B[Parse CLI args
     --input --strategy --output --dev]
     B --> C[Configure logging]
-    C --> D[Load and parse input JSON
+    C --> D[Load parse and validate input JSON
     parse_input_json]
 
     D --> E{Input valid?}
