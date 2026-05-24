@@ -29,7 +29,7 @@ flowchart TD
 
     K --> L[Release drivers whose
     available_at <= current time]
-    L --> M[Add arriving rides to pending queue]
+    L --> M[Check rides from the pending queue]
     M --> N[Find candidate drivers
     geohash neighborhood + max pickup radius]
 
