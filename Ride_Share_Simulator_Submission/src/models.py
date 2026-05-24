@@ -20,7 +20,7 @@ class Location:
         """
         return haversine(self.lat, self.lon, other.lat, other.lon)
 
-    def to_geohash(self, precision: int = 6) -> str: # todo can use GEOHASH_PRECISION
+    def to_geohash(self, precision: int = 6) -> str:
         """Convert the location to a geohash string at the requested precision.
         precision: The number of characters in the resulting geohash string.
         A higher value increases accuracy but creates smaller grid cells.
@@ -88,7 +88,7 @@ class Ride:
     id: str
     pickup: Location
     dropoff: Location
-    request_time_seconds: float # todo change name: requested_at
+    request_time_seconds: float
     passenger_rating: float
     vehicle_type: str = "private"
 
@@ -101,13 +101,13 @@ class Ride:
 
         if self.vehicle_type not in ("private", "suv"):
             raise ValueError("vehicle_type must be one of: 'private', 'suv'.")
-        # todo It better to do the request time convert in the Models model and not in the parser, to be sure that the ride in the futere
+
         if not isinstance(self.request_time_seconds, (int, float)) or isinstance(self.request_time_seconds, bool):
             raise ValueError("Ride request_time_seconds must be a numeric timestamp.")
         if self.request_time_seconds < 0.0 or math.isnan(self.request_time_seconds) or math.isinf(self.request_time_seconds):
             raise ValueError("Ride request_time_seconds must be a non-negative finite timestamp.")
 
-    def calculate_distance(self) -> float: #todo: add a value for a ride - distance_ride
+    def calculate_distance(self) -> float:
         """Calculate the distance from pickup to dropoff in kilometers.
         
         Returns:

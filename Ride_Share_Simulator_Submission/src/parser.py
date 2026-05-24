@@ -62,7 +62,7 @@ RIDE_SCHEMA = {
             "pattern": r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})$",
         },
         "passenger_rating": {"type": "number", "minimum": 1.0, "maximum": 5.0},
-        "vehicle_type": {"type": "string", "enum": ["private", "suv"]}, #todo should let a default value
+        "vehicle_type": {"type": "string", "enum": ["private", "suv"]},
     },
     "additionalProperties": False,
 }
@@ -95,7 +95,6 @@ def parse_input_json(filepath: str) -> Tuple[List[Driver], List[Ride]]:
     rides: List[Ride] = []
 
     for driver_record in data.get("drivers", []):
-        # todo we checked all the arguments in the Models dataclass, so we shouldn't check here
         if not _validate_record(driver_record, DRIVER_SCHEMA):
             continue
 
@@ -135,7 +134,6 @@ def parse_input_json(filepath: str) -> Tuple[List[Driver], List[Ride]]:
                 pickup=pickup,
                 dropoff=dropoff,
                 request_time_seconds=_parse_request_time(ride_record["request_time"]),
-                # Todo It better to do the request time convert in the Models model and not here. , to be sure that the ride in the futere
                 passenger_rating=float(ride_record["passenger_rating"]),
                 vehicle_type=ride_record["vehicle_type"],
             )

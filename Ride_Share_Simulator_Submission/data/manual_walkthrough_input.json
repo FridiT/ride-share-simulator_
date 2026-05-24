@@ -1,0 +1,96 @@
+{
+  "drivers": [
+    {
+      "id": "d_private",
+      "name": "Dana",
+      "rating": 4.8,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.0853,
+        "lon": 34.7818
+      }
+    },
+    {
+      "id": "d_suv",
+      "name": "Shai",
+      "rating": 4.6,
+      "vehicle_type": "suv",
+      "current_location": {
+        "lat": 32.0853,
+        "lon": 34.7818
+      }
+    }
+  ],
+  "rides": [
+    {
+      "id": "r1_private_long",
+      "pickup": {
+        "lat": 32.0853,
+        "lon": 34.7818
+      },
+      "dropoff": {
+        "lat": 32.1153,
+        "lon": 34.7818
+      },
+      "request_time": "2025-01-01T08:00:00Z",
+      "passenger_rating": 4.7,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "r2_private_collision",
+      "pickup": {
+        "lat": 32.0853,
+        "lon": 34.7818
+      },
+      "dropoff": {
+        "lat": 32.1153,
+        "lon": 34.7818
+      },
+      "request_time": "2025-01-01T08:00:00Z",
+      "passenger_rating": 4.5,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "r3_suv_long",
+      "pickup": {
+        "lat": 32.0853,
+        "lon": 34.7818
+      },
+      "dropoff": {
+        "lat": 32.1053,
+        "lon": 34.7818
+      },
+      "request_time": "2025-01-01T08:00:00Z",
+      "passenger_rating": 4.2,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "r4_far_out_of_radius",
+      "pickup": {
+        "lat": 32.2853,
+        "lon": 34.7818
+      },
+      "dropoff": {
+        "lat": 32.2953,
+        "lon": 34.7918
+      },
+      "request_time": "2025-01-01T08:01:00Z",
+      "passenger_rating": 4.0,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "r5_wait_then_assign",
+      "pickup": {
+        "lat": 32.0859,
+        "lon": 34.7822
+      },
+      "dropoff": {
+        "lat": 32.09,
+        "lon": 34.785
+      },
+      "request_time": "2025-01-01T08:06:00Z",
+      "passenger_rating": 4.4,
+      "vehicle_type": "private"
+    }
+  ]
+}

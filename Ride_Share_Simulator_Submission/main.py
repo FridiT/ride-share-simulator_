@@ -105,12 +105,11 @@ def main() -> int:
     strategy = select_strategy(args.strategy)
     simulator = Simulator(strategy)
 
-    # todo: add note: add all drivers to available_drivers_by_geohash dict
     for driver in drivers:
         simulator.add_driver(driver)
 
     results = simulator.run(rides)
-    report = generate_report(results) # todo: move the save_to_json to generate_report function
+    report = generate_report(results)
 
     try:
         save_to_json(report, args.output)

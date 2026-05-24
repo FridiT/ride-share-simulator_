@@ -1,0 +1,1286 @@
+{
+  "drivers": [
+    {
+      "id": "driver_1",
+      "name": "Driver 1",
+      "rating": 3.6,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.049305,
+        "lon": 34.737514
+      }
+    },
+    {
+      "id": "driver_2",
+      "name": "Driver 2",
+      "rating": 3.9,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.148049,
+        "lon": 34.71571
+      }
+    },
+    {
+      "id": "driver_3",
+      "name": "Driver 3",
+      "rating": 2.7,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.040282,
+        "lon": 34.782657
+      }
+    },
+    {
+      "id": "driver_4",
+      "name": "Driver 4",
+      "rating": 1.1,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.109282,
+        "lon": 34.788991
+      }
+    },
+    {
+      "id": "driver_5",
+      "name": "Driver 5",
+      "rating": 1.9,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.134809,
+        "lon": 34.70284
+      }
+    },
+    {
+      "id": "driver_6",
+      "name": "Driver 6",
+      "rating": 4.2,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.05974,
+        "lon": 34.726677
+      }
+    },
+    {
+      "id": "driver_7",
+      "name": "Driver 7",
+      "rating": 4.8,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.020139,
+        "lon": 34.717275
+      }
+    },
+    {
+      "id": "driver_8",
+      "name": "Driver 8",
+      "rating": 4.4,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.134441,
+        "lon": 34.818557
+      }
+    },
+    {
+      "id": "driver_9",
+      "name": "Driver 9",
+      "rating": 3.1,
+      "vehicle_type": "suv",
+      "current_location": {
+        "lat": 32.065866,
+        "lon": 34.790127
+      }
+    },
+    {
+      "id": "driver_10",
+      "name": "Driver 10",
+      "rating": 4.3,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.143173,
+        "lon": 34.794176
+      }
+    },
+    {
+      "id": "driver_11",
+      "name": "Driver 11",
+      "rating": 3.8,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.041764,
+        "lon": 34.748102
+      }
+    },
+    {
+      "id": "driver_12",
+      "name": "Driver 12",
+      "rating": 1.3,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.02146,
+        "lon": 34.746276
+      }
+    },
+    {
+      "id": "driver_13",
+      "name": "Driver 13",
+      "rating": 3.5,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.064529,
+        "lon": 34.735321
+      }
+    },
+    {
+      "id": "driver_14",
+      "name": "Driver 14",
+      "rating": 2.1,
+      "vehicle_type": "suv",
+      "current_location": {
+        "lat": 32.108986,
+        "lon": 34.799261
+      }
+    },
+    {
+      "id": "driver_15",
+      "name": "Driver 15",
+      "rating": 1.7,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.031444,
+        "lon": 34.762513
+      }
+    },
+    {
+      "id": "driver_16",
+      "name": "Driver 16",
+      "rating": 5.0,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.094412,
+        "lon": 34.811338
+      }
+    },
+    {
+      "id": "driver_17",
+      "name": "Driver 17",
+      "rating": 4.4,
+      "vehicle_type": "suv",
+      "current_location": {
+        "lat": 32.041948,
+        "lon": 34.706936
+      }
+    },
+    {
+      "id": "driver_18",
+      "name": "Driver 18",
+      "rating": 2.3,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.039057,
+        "lon": 34.852666
+      }
+    },
+    {
+      "id": "driver_19",
+      "name": "Driver 19",
+      "rating": 4.5,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.11017,
+        "lon": 34.765101
+      }
+    },
+    {
+      "id": "driver_20",
+      "name": "Driver 20",
+      "rating": 4.7,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.047681,
+        "lon": 34.74126
+      }
+    },
+    {
+      "id": "driver_21",
+      "name": "Driver 21",
+      "rating": 3.2,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.098834,
+        "lon": 34.845452
+      }
+    },
+    {
+      "id": "driver_22",
+      "name": "Driver 22",
+      "rating": 2.6,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.164906,
+        "lon": 34.783324
+      }
+    },
+    {
+      "id": "driver_23",
+      "name": "Driver 23",
+      "rating": 1.4,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.022844,
+        "lon": 34.802191
+      }
+    },
+    {
+      "id": "driver_24",
+      "name": "Driver 24",
+      "rating": 4.2,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.015464,
+        "lon": 34.762859
+      }
+    },
+    {
+      "id": "driver_25",
+      "name": "Driver 25",
+      "rating": 5.0,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.160673,
+        "lon": 34.839525
+      }
+    },
+    {
+      "id": "driver_26",
+      "name": "Driver 26",
+      "rating": 1.0,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.114374,
+        "lon": 34.787715
+      }
+    },
+    {
+      "id": "driver_27",
+      "name": "Driver 27",
+      "rating": 2.1,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.023148,
+        "lon": 34.771362
+      }
+    },
+    {
+      "id": "driver_28",
+      "name": "Driver 28",
+      "rating": 2.8,
+      "vehicle_type": "suv",
+      "current_location": {
+        "lat": 32.145436,
+        "lon": 34.743942
+      }
+    },
+    {
+      "id": "driver_29",
+      "name": "Driver 29",
+      "rating": 3.0,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.15132,
+        "lon": 34.841083
+      }
+    },
+    {
+      "id": "driver_30",
+      "name": "Driver 30",
+      "rating": 2.2,
+      "vehicle_type": "private",
+      "current_location": {
+        "lat": 32.102735,
+        "lon": 34.726254
+      }
+    }
+  ],
+  "rides": [
+    {
+      "id": "ride_1",
+      "pickup": {
+        "lat": 32.137802,
+        "lon": 34.789676
+      },
+      "dropoff": {
+        "lat": 32.141025,
+        "lon": 34.787871
+      },
+      "request_time": "2025-01-01T08:00:00Z",
+      "passenger_rating": 1.0,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_2",
+      "pickup": {
+        "lat": 32.007674,
+        "lon": 34.754396
+      },
+      "dropoff": {
+        "lat": 32.182364,
+        "lon": 34.843155
+      },
+      "request_time": "2025-01-01T08:00:05Z",
+      "passenger_rating": 2.0,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_3",
+      "pickup": {
+        "lat": 32.002431,
+        "lon": 34.778998
+      },
+      "dropoff": {
+        "lat": 31.999143,
+        "lon": 34.83392
+      },
+      "request_time": "2025-01-01T08:00:12Z",
+      "passenger_rating": 4.1,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_4",
+      "pickup": {
+        "lat": 32.17467,
+        "lon": 34.714825
+      },
+      "dropoff": {
+        "lat": 32.090835,
+        "lon": 34.803119
+      },
+      "request_time": "2025-01-01T08:00:32Z",
+      "passenger_rating": 4.9,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_5",
+      "pickup": {
+        "lat": 32.12789,
+        "lon": 34.761598
+      },
+      "dropoff": {
+        "lat": 32.119637,
+        "lon": 34.756484
+      },
+      "request_time": "2025-01-01T08:00:43Z",
+      "passenger_rating": 4.6,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_6",
+      "pickup": {
+        "lat": 32.030239,
+        "lon": 34.749417
+      },
+      "dropoff": {
+        "lat": 32.102962,
+        "lon": 34.727823
+      },
+      "request_time": "2025-01-01T08:00:55Z",
+      "passenger_rating": 1.9,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_7",
+      "pickup": {
+        "lat": 32.031088,
+        "lon": 34.862884
+      },
+      "dropoff": {
+        "lat": 32.157227,
+        "lon": 34.695971
+      },
+      "request_time": "2025-01-01T08:01:01Z",
+      "passenger_rating": 2.0,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_8",
+      "pickup": {
+        "lat": 32.093147,
+        "lon": 34.826471
+      },
+      "dropoff": {
+        "lat": 32.161777,
+        "lon": 34.797042
+      },
+      "request_time": "2025-01-01T08:01:12Z",
+      "passenger_rating": 2.0,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_9",
+      "pickup": {
+        "lat": 32.023382,
+        "lon": 34.701186
+      },
+      "dropoff": {
+        "lat": 32.07151,
+        "lon": 34.766516
+      },
+      "request_time": "2025-01-01T08:01:30Z",
+      "passenger_rating": 2.9,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_10",
+      "pickup": {
+        "lat": 31.997423,
+        "lon": 34.827443
+      },
+      "dropoff": {
+        "lat": 32.145419,
+        "lon": 34.703654
+      },
+      "request_time": "2025-01-01T08:01:38Z",
+      "passenger_rating": 1.8,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_11",
+      "pickup": {
+        "lat": 32.069676,
+        "lon": 34.737509
+      },
+      "dropoff": {
+        "lat": 32.035261,
+        "lon": 34.866453
+      },
+      "request_time": "2025-01-01T08:01:47Z",
+      "passenger_rating": 2.8,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_12",
+      "pickup": {
+        "lat": 31.995418,
+        "lon": 34.881656
+      },
+      "dropoff": {
+        "lat": 32.152506,
+        "lon": 34.875599
+      },
+      "request_time": "2025-01-01T08:01:55Z",
+      "passenger_rating": 4.7,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_13",
+      "pickup": {
+        "lat": 32.066583,
+        "lon": 34.778072
+      },
+      "dropoff": {
+        "lat": 32.15823,
+        "lon": 34.862289
+      },
+      "request_time": "2025-01-01T08:02:05Z",
+      "passenger_rating": 1.7,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_14",
+      "pickup": {
+        "lat": 32.038341,
+        "lon": 34.838614
+      },
+      "dropoff": {
+        "lat": 32.076302,
+        "lon": 34.766401
+      },
+      "request_time": "2025-01-01T08:02:22Z",
+      "passenger_rating": 4.8,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_15",
+      "pickup": {
+        "lat": 32.016259,
+        "lon": 34.741142
+      },
+      "dropoff": {
+        "lat": 32.179042,
+        "lon": 34.797636
+      },
+      "request_time": "2025-01-01T08:02:42Z",
+      "passenger_rating": 3.2,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_16",
+      "pickup": {
+        "lat": 31.995328,
+        "lon": 34.777158
+      },
+      "dropoff": {
+        "lat": 32.169177,
+        "lon": 34.788025
+      },
+      "request_time": "2025-01-01T08:02:48Z",
+      "passenger_rating": 1.2,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_17",
+      "pickup": {
+        "lat": 31.999004,
+        "lon": 34.695392
+      },
+      "dropoff": {
+        "lat": 32.157664,
+        "lon": 34.762555
+      },
+      "request_time": "2025-01-01T08:02:58Z",
+      "passenger_rating": 4.8,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_18",
+      "pickup": {
+        "lat": 32.109176,
+        "lon": 34.765645
+      },
+      "dropoff": {
+        "lat": 32.102034,
+        "lon": 34.786357
+      },
+      "request_time": "2025-01-01T08:03:04Z",
+      "passenger_rating": 4.7,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_19",
+      "pickup": {
+        "lat": 32.033037,
+        "lon": 34.760957
+      },
+      "dropoff": {
+        "lat": 32.119638,
+        "lon": 34.741799
+      },
+      "request_time": "2025-01-01T08:03:19Z",
+      "passenger_rating": 2.3,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_20",
+      "pickup": {
+        "lat": 31.987163,
+        "lon": 34.806032
+      },
+      "dropoff": {
+        "lat": 32.097899,
+        "lon": 34.701796
+      },
+      "request_time": "2025-01-01T08:03:26Z",
+      "passenger_rating": 3.2,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_21",
+      "pickup": {
+        "lat": 32.171952,
+        "lon": 34.857973
+      },
+      "dropoff": {
+        "lat": 32.161154,
+        "lon": 34.755705
+      },
+      "request_time": "2025-01-01T08:03:35Z",
+      "passenger_rating": 1.6,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_22",
+      "pickup": {
+        "lat": 32.107636,
+        "lon": 34.879247
+      },
+      "dropoff": {
+        "lat": 32.116095,
+        "lon": 34.683365
+      },
+      "request_time": "2025-01-01T08:03:49Z",
+      "passenger_rating": 4.3,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_23",
+      "pickup": {
+        "lat": 32.173086,
+        "lon": 34.708658
+      },
+      "dropoff": {
+        "lat": 32.008386,
+        "lon": 34.703207
+      },
+      "request_time": "2025-01-01T08:03:57Z",
+      "passenger_rating": 3.2,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_24",
+      "pickup": {
+        "lat": 32.128822,
+        "lon": 34.722519
+      },
+      "dropoff": {
+        "lat": 32.112148,
+        "lon": 34.734597
+      },
+      "request_time": "2025-01-01T08:04:08Z",
+      "passenger_rating": 3.0,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_25",
+      "pickup": {
+        "lat": 32.00376,
+        "lon": 34.766515
+      },
+      "dropoff": {
+        "lat": 32.040636,
+        "lon": 34.682509
+      },
+      "request_time": "2025-01-01T08:04:14Z",
+      "passenger_rating": 4.1,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_26",
+      "pickup": {
+        "lat": 32.017616,
+        "lon": 34.770167
+      },
+      "dropoff": {
+        "lat": 32.126433,
+        "lon": 34.793981
+      },
+      "request_time": "2025-01-01T08:04:27Z",
+      "passenger_rating": 1.4,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_27",
+      "pickup": {
+        "lat": 32.094418,
+        "lon": 34.848719
+      },
+      "dropoff": {
+        "lat": 32.101802,
+        "lon": 34.711419
+      },
+      "request_time": "2025-01-01T08:04:36Z",
+      "passenger_rating": 1.5,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_28",
+      "pickup": {
+        "lat": 32.165085,
+        "lon": 34.723815
+      },
+      "dropoff": {
+        "lat": 32.035206,
+        "lon": 34.702359
+      },
+      "request_time": "2025-01-01T08:04:42Z",
+      "passenger_rating": 4.1,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_29",
+      "pickup": {
+        "lat": 32.180067,
+        "lon": 34.831696
+      },
+      "dropoff": {
+        "lat": 32.170453,
+        "lon": 34.729147
+      },
+      "request_time": "2025-01-01T08:05:00Z",
+      "passenger_rating": 1.7,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_30",
+      "pickup": {
+        "lat": 32.161583,
+        "lon": 34.686757
+      },
+      "dropoff": {
+        "lat": 32.132613,
+        "lon": 34.748237
+      },
+      "request_time": "2025-01-01T08:05:10Z",
+      "passenger_rating": 4.7,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_31",
+      "pickup": {
+        "lat": 32.038661,
+        "lon": 34.839275
+      },
+      "dropoff": {
+        "lat": 32.006919,
+        "lon": 34.856233
+      },
+      "request_time": "2025-01-01T08:05:22Z",
+      "passenger_rating": 4.4,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_32",
+      "pickup": {
+        "lat": 32.055232,
+        "lon": 34.845907
+      },
+      "dropoff": {
+        "lat": 32.159565,
+        "lon": 34.726385
+      },
+      "request_time": "2025-01-01T08:05:41Z",
+      "passenger_rating": 3.6,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_33",
+      "pickup": {
+        "lat": 32.158171,
+        "lon": 34.875178
+      },
+      "dropoff": {
+        "lat": 32.041125,
+        "lon": 34.810096
+      },
+      "request_time": "2025-01-01T08:05:54Z",
+      "passenger_rating": 2.6,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_34",
+      "pickup": {
+        "lat": 32.173147,
+        "lon": 34.704868
+      },
+      "dropoff": {
+        "lat": 32.17938,
+        "lon": 34.717514
+      },
+      "request_time": "2025-01-01T08:06:09Z",
+      "passenger_rating": 4.9,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_35",
+      "pickup": {
+        "lat": 32.104614,
+        "lon": 34.750937
+      },
+      "dropoff": {
+        "lat": 32.142586,
+        "lon": 34.769079
+      },
+      "request_time": "2025-01-01T08:06:17Z",
+      "passenger_rating": 4.9,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_36",
+      "pickup": {
+        "lat": 32.036245,
+        "lon": 34.823557
+      },
+      "dropoff": {
+        "lat": 31.985638,
+        "lon": 34.866915
+      },
+      "request_time": "2025-01-01T08:06:28Z",
+      "passenger_rating": 3.2,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_37",
+      "pickup": {
+        "lat": 32.058144,
+        "lon": 34.695795
+      },
+      "dropoff": {
+        "lat": 32.118148,
+        "lon": 34.74784
+      },
+      "request_time": "2025-01-01T08:06:39Z",
+      "passenger_rating": 2.3,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_38",
+      "pickup": {
+        "lat": 32.086725,
+        "lon": 34.815179
+      },
+      "dropoff": {
+        "lat": 32.050537,
+        "lon": 34.821242
+      },
+      "request_time": "2025-01-01T08:06:53Z",
+      "passenger_rating": 3.2,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_39",
+      "pickup": {
+        "lat": 32.120764,
+        "lon": 34.862361
+      },
+      "dropoff": {
+        "lat": 32.108403,
+        "lon": 34.74199
+      },
+      "request_time": "2025-01-01T08:07:10Z",
+      "passenger_rating": 3.2,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_40",
+      "pickup": {
+        "lat": 32.027337,
+        "lon": 34.838952
+      },
+      "dropoff": {
+        "lat": 32.106632,
+        "lon": 34.74625
+      },
+      "request_time": "2025-01-01T08:07:24Z",
+      "passenger_rating": 2.8,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_41",
+      "pickup": {
+        "lat": 32.144047,
+        "lon": 34.873766
+      },
+      "dropoff": {
+        "lat": 32.132492,
+        "lon": 34.81357
+      },
+      "request_time": "2025-01-01T08:07:44Z",
+      "passenger_rating": 2.1,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_42",
+      "pickup": {
+        "lat": 32.003977,
+        "lon": 34.8722
+      },
+      "dropoff": {
+        "lat": 32.032274,
+        "lon": 34.743884
+      },
+      "request_time": "2025-01-01T08:07:59Z",
+      "passenger_rating": 4.2,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_43",
+      "pickup": {
+        "lat": 32.034269,
+        "lon": 34.776827
+      },
+      "dropoff": {
+        "lat": 32.155248,
+        "lon": 34.696366
+      },
+      "request_time": "2025-01-01T08:08:05Z",
+      "passenger_rating": 2.7,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_44",
+      "pickup": {
+        "lat": 32.128969,
+        "lon": 34.758596
+      },
+      "dropoff": {
+        "lat": 32.065231,
+        "lon": 34.711314
+      },
+      "request_time": "2025-01-01T08:08:16Z",
+      "passenger_rating": 3.8,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_45",
+      "pickup": {
+        "lat": 32.140984,
+        "lon": 34.725568
+      },
+      "dropoff": {
+        "lat": 32.146122,
+        "lon": 34.820982
+      },
+      "request_time": "2025-01-01T08:08:24Z",
+      "passenger_rating": 2.9,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_46",
+      "pickup": {
+        "lat": 32.076592,
+        "lon": 34.842083
+      },
+      "dropoff": {
+        "lat": 32.118816,
+        "lon": 34.879378
+      },
+      "request_time": "2025-01-01T08:08:32Z",
+      "passenger_rating": 3.4,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_47",
+      "pickup": {
+        "lat": 32.10783,
+        "lon": 34.825655
+      },
+      "dropoff": {
+        "lat": 32.086256,
+        "lon": 34.847914
+      },
+      "request_time": "2025-01-01T08:08:51Z",
+      "passenger_rating": 3.2,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_48",
+      "pickup": {
+        "lat": 32.075314,
+        "lon": 34.832155
+      },
+      "dropoff": {
+        "lat": 32.153273,
+        "lon": 34.737262
+      },
+      "request_time": "2025-01-01T08:09:11Z",
+      "passenger_rating": 4.1,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_49",
+      "pickup": {
+        "lat": 32.040219,
+        "lon": 34.697297
+      },
+      "dropoff": {
+        "lat": 32.042446,
+        "lon": 34.736143
+      },
+      "request_time": "2025-01-01T08:09:23Z",
+      "passenger_rating": 2.3,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_50",
+      "pickup": {
+        "lat": 32.015466,
+        "lon": 34.758407
+      },
+      "dropoff": {
+        "lat": 32.015861,
+        "lon": 34.724591
+      },
+      "request_time": "2025-01-01T08:09:32Z",
+      "passenger_rating": 2.7,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_51",
+      "pickup": {
+        "lat": 32.068455,
+        "lon": 34.723167
+      },
+      "dropoff": {
+        "lat": 32.069329,
+        "lon": 34.862768
+      },
+      "request_time": "2025-01-01T08:09:51Z",
+      "passenger_rating": 3.3,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_52",
+      "pickup": {
+        "lat": 32.080696,
+        "lon": 34.870348
+      },
+      "dropoff": {
+        "lat": 32.045023,
+        "lon": 34.759797
+      },
+      "request_time": "2025-01-01T08:10:08Z",
+      "passenger_rating": 4.6,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_53",
+      "pickup": {
+        "lat": 32.082946,
+        "lon": 34.736387
+      },
+      "dropoff": {
+        "lat": 32.082428,
+        "lon": 34.759571
+      },
+      "request_time": "2025-01-01T08:10:20Z",
+      "passenger_rating": 3.7,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_54",
+      "pickup": {
+        "lat": 32.153401,
+        "lon": 34.865708
+      },
+      "dropoff": {
+        "lat": 32.181444,
+        "lon": 34.788625
+      },
+      "request_time": "2025-01-01T08:10:30Z",
+      "passenger_rating": 4.6,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_55",
+      "pickup": {
+        "lat": 32.002089,
+        "lon": 34.767523
+      },
+      "dropoff": {
+        "lat": 32.15867,
+        "lon": 34.718146
+      },
+      "request_time": "2025-01-01T08:10:35Z",
+      "passenger_rating": 2.0,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_56",
+      "pickup": {
+        "lat": 32.050669,
+        "lon": 34.834046
+      },
+      "dropoff": {
+        "lat": 32.061125,
+        "lon": 34.832202
+      },
+      "request_time": "2025-01-01T08:10:54Z",
+      "passenger_rating": 4.3,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_57",
+      "pickup": {
+        "lat": 32.079361,
+        "lon": 34.831605
+      },
+      "dropoff": {
+        "lat": 31.995717,
+        "lon": 34.872184
+      },
+      "request_time": "2025-01-01T08:11:01Z",
+      "passenger_rating": 1.9,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_58",
+      "pickup": {
+        "lat": 32.136147,
+        "lon": 34.871722
+      },
+      "dropoff": {
+        "lat": 32.025172,
+        "lon": 34.685876
+      },
+      "request_time": "2025-01-01T08:11:07Z",
+      "passenger_rating": 1.6,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_59",
+      "pickup": {
+        "lat": 32.098094,
+        "lon": 34.725393
+      },
+      "dropoff": {
+        "lat": 32.125193,
+        "lon": 34.83518
+      },
+      "request_time": "2025-01-01T08:11:15Z",
+      "passenger_rating": 1.7,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_60",
+      "pickup": {
+        "lat": 32.140858,
+        "lon": 34.714553
+      },
+      "dropoff": {
+        "lat": 32.047508,
+        "lon": 34.797537
+      },
+      "request_time": "2025-01-01T08:11:23Z",
+      "passenger_rating": 4.7,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_61",
+      "pickup": {
+        "lat": 32.064631,
+        "lon": 34.824803
+      },
+      "dropoff": {
+        "lat": 32.000499,
+        "lon": 34.819923
+      },
+      "request_time": "2025-01-01T08:11:40Z",
+      "passenger_rating": 3.5,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_62",
+      "pickup": {
+        "lat": 32.155359,
+        "lon": 34.801882
+      },
+      "dropoff": {
+        "lat": 32.009511,
+        "lon": 34.878569
+      },
+      "request_time": "2025-01-01T08:11:54Z",
+      "passenger_rating": 4.1,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_63",
+      "pickup": {
+        "lat": 32.117604,
+        "lon": 34.695591
+      },
+      "dropoff": {
+        "lat": 32.114809,
+        "lon": 34.68433
+      },
+      "request_time": "2025-01-01T08:12:12Z",
+      "passenger_rating": 2.7,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_64",
+      "pickup": {
+        "lat": 32.177458,
+        "lon": 34.808917
+      },
+      "dropoff": {
+        "lat": 32.151041,
+        "lon": 34.823262
+      },
+      "request_time": "2025-01-01T08:12:30Z",
+      "passenger_rating": 2.7,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_65",
+      "pickup": {
+        "lat": 32.108482,
+        "lon": 34.865724
+      },
+      "dropoff": {
+        "lat": 32.140228,
+        "lon": 34.774775
+      },
+      "request_time": "2025-01-01T08:12:43Z",
+      "passenger_rating": 4.3,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_66",
+      "pickup": {
+        "lat": 32.155643,
+        "lon": 34.847946
+      },
+      "dropoff": {
+        "lat": 32.002633,
+        "lon": 34.858126
+      },
+      "request_time": "2025-01-01T08:12:58Z",
+      "passenger_rating": 2.0,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_67",
+      "pickup": {
+        "lat": 32.052579,
+        "lon": 34.780661
+      },
+      "dropoff": {
+        "lat": 32.050303,
+        "lon": 34.77931
+      },
+      "request_time": "2025-01-01T08:13:15Z",
+      "passenger_rating": 2.4,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_68",
+      "pickup": {
+        "lat": 32.161364,
+        "lon": 34.822037
+      },
+      "dropoff": {
+        "lat": 32.040554,
+        "lon": 34.68383
+      },
+      "request_time": "2025-01-01T08:13:28Z",
+      "passenger_rating": 4.8,
+      "vehicle_type": "private"
+    },
+    {
+      "id": "ride_69",
+      "pickup": {
+        "lat": 32.083016,
+        "lon": 34.833433
+      },
+      "dropoff": {
+        "lat": 32.123422,
+        "lon": 34.810981
+      },
+      "request_time": "2025-01-01T08:13:46Z",
+      "passenger_rating": 3.0,
+      "vehicle_type": "suv"
+    },
+    {
+      "id": "ride_70",
+      "pickup": {
+        "lat": 32.044147,
+        "lon": 34.76268
+      },
+      "dropoff": {
+        "lat": 32.033961,
+        "lon": 34.814592
+      },
+      "request_time": "2025-01-01T08:13:53Z",
+      "passenger_rating": 2.5,
+      "vehicle_type": "private"
+    }
+  ]
+}

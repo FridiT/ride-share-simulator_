@@ -82,11 +82,6 @@ class Simulator:
                 if driver.vehicle_type != required_vehicle:
                     continue
 
-                # todo: this note is relevant just for a new feature that soppurts preorder rides
-                # add condition that check the driver duration to the pickup be less then the required time - (.....)
-                # if ride.request_time_seconds < driver.available_at + ride.(duration....from driver.location to ride.pickup):
-                #     continue
-
                 dist = driver.current_location.distance_to(ride.pickup)
                 if dist <= MAX_PICKUP_DISTANCE_KM:
                     candidates.append(driver)
@@ -196,7 +191,7 @@ class Simulator:
                         len(self.pending_rides),
                     )
 
-            # If no events left, break # TODO: should be in the beginning of the function
+            # If no events left, break
             if next_event_time == float("inf"):
                 break
 
