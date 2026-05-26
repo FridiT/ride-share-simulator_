@@ -1,3 +1,0 @@
-pygeohash
-jsonschema
-pytest
