@@ -5,6 +5,7 @@ from src.models import Driver, Ride
 
 
 def test_parse_input_json_valid(tmp_path):
+    # This test verifies that valid driver and ride records are parsed correctly.
     payload = {
         "drivers": [
             {
@@ -42,6 +43,7 @@ def test_parse_input_json_valid(tmp_path):
 
 
 def test_parse_input_json_skips_invalid_records(tmp_path):
+    # The second driver has an invalid rating (6.0), and the second ride has an invalid request_time format.
     payload = {
         "drivers": [
             {
@@ -91,6 +93,7 @@ def test_parse_input_json_skips_invalid_records(tmp_path):
 
 
 def test_parse_input_json_skips_invalid_timestamp_string_request_time(tmp_path):
+    # The ride has an invalid request_time format (not a string).
     payload = {
         "drivers": [],
         "rides": [
@@ -114,6 +117,7 @@ def test_parse_input_json_skips_invalid_timestamp_string_request_time(tmp_path):
 
 
 def test_parse_input_json_skips_numeric_request_time(tmp_path):
+    # The ride has an invalid request_time format (not a string).
     payload = {
         "drivers": [],
         "rides": [
@@ -137,6 +141,7 @@ def test_parse_input_json_skips_numeric_request_time(tmp_path):
 
 
 def test_parse_input_json_skips_ride_missing_vehicle_type(tmp_path):
+    # The ride is missing the required "vehicle_type" field.
     payload = {
         "drivers": [],
         "rides": [
@@ -159,6 +164,7 @@ def test_parse_input_json_skips_ride_missing_vehicle_type(tmp_path):
 
 
 def test_generate_report_and_save_to_json(tmp_path):
+    # This test verifies that the report generation and JSON saving functions work correctly.
     results = {
         "assignments": [{"timestamp": "2024-01-01T00:00:00Z", "ride_id": "r1", "driver_id": "d1"}],
         "unassigned": ["r2"],

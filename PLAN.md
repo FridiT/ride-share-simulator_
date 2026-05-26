@@ -64,6 +64,12 @@ Ride_Share_Simulator/
 
 **Dependencies:** `pygeohash`, `src.logic.haversine` (centralized geospatial calculation)
 
+**Tests that verify completion (existing only):**
+- `tests/test_models.py::test_distance_to_same_location_is_zero` - Verifies zero distance for identical coordinates.
+- `tests/test_models.py::test_distance_to_known_equatorial_degree` - Verifies known haversine distance (~111.195 km for 1 degree at equator).
+- `tests/test_models.py::test_to_geohash_default_precision` - Verifies geohash conversion output and default precision behavior.
+- `tests/test_models.py::test_to_geohash_invalid_precision_raises_value_error` - Verifies invalid precision is rejected.
+
 ---
 
 ### 2.2 Driver Class [DONE] ✓
@@ -88,6 +94,17 @@ Ride_Share_Simulator/
 
 **Dependencies:** Location class
 
+**Tests that verify completion (existing only):**
+- `tests/test_models.py::test_driver_creation_valid` - Verifies valid `Driver` object construction.
+- `tests/test_models.py::test_driver_creation_invalid_id` - Verifies empty driver id is rejected.
+- `tests/test_models.py::test_driver_creation_invalid_rating_too_low` - Verifies rating below allowed range is rejected.
+- `tests/test_models.py::test_driver_creation_invalid_rating_too_high` - Verifies rating above allowed range is rejected.
+- `tests/test_models.py::test_driver_creation_invalid_vehicle_type` - Verifies empty vehicle type is rejected.
+- `tests/test_models.py::test_driver_creation_invalid_available_at` - Verifies negative availability time in seconds is rejected.
+- `tests/test_models.py::test_driver_update_location` - Verifies location update logic.
+- `tests/test_models.py::test_driver_less_than_comparison` - Verifies heap ordering behavior via `__lt__`.
+- `tests/test_models.py::test_driver_repr` - Verifies debug string representation.
+
 ---
 
 ### 2.3 Ride Class [DONE] ✓
@@ -110,6 +127,19 @@ Ride_Share_Simulator/
 
 **Dependencies:** `Location` class, `timestamp_str_to_seconds()` from `src.logic`
 
+**Tests that verify completion (existing only):**
+- `tests/test_models.py::test_ride_creation_valid` - Verifies valid `Ride` object construction.
+- `tests/test_models.py::test_ride_creation_invalid_id` - Verifies empty ride id is rejected.
+- `tests/test_models.py::test_ride_creation_invalid_rating_too_low` - Verifies passenger rating below range is rejected.
+- `tests/test_models.py::test_ride_creation_invalid_rating_too_high` - Verifies passenger rating above range is rejected.
+- `tests/test_models.py::test_ride_creation_invalid_request_time` - Verifies invalid request timestamp is rejected.
+- `tests/test_models.py::test_ride_calculate_distance` - Verifies pickup-to-dropoff distance calculation.
+- `tests/test_models.py::test_ride_calculate_estimated_time_with_default_speed` - Verifies ETA calculation with default speed.
+- `tests/test_models.py::test_ride_calculate_estimated_time_with_custom_speed` - Verifies ETA calculation with custom speed.
+- `tests/test_models.py::test_ride_calculate_estimated_time_invalid_speed` - Verifies invalid speed input is rejected.
+- `tests/test_models.py::test_ride_repr` - Verifies debug string representation.
+- `tests/test_models.py::test_ride_request_time_conversion` - Verifies ISO-8601 request time is converted consistently to Unix seconds (# manual todo (20.5.26): this test not necessary here yet, till we move the convertion request time into Model )
+
 ---
 
 ## Phase 3: Mathematical & Geospatial Engine (src/logic.py) [DONE] ✓
@@ -130,6 +160,19 @@ Ride_Share_Simulator/
 
 **Dependencies:** `datetime` module (standard library)
 
+**Tests that verify completion (existing only):**
+- `tests/test_logic.py::test_timestamp_str_to_seconds_valid` - Verifies ISO-8601 to Unix-seconds conversion.
+- `tests/test_logic.py::test_seconds_to_timestamp_str_roundtrip` - Verifies roundtrip conversion preserves timestamp semantics.
+- `tests/test_logic.py::test_timestamp_str_to_seconds_invalid_format` - Verifies invalid timestamp input is rejected.
+- `tests/test_logic.py::test_is_timed_out_within_window` - Verifies timeout check returns False within default timeout window.
+- `tests/test_logic.py::test_is_not_timed_out_at_exact_default_timeout` - Verifies exact boundary behavior at 300 seconds.
+- `tests/test_logic.py::test_is_timed_out_exceeds_default_timeout` - Verifies timeout check returns True beyond threshold.
+- `tests/test_logic.py::test_is_timed_out_custom_timeout` - Verifies custom timeout parameter handling.
+- `tests/test_logic.py::test_format_duration_seconds_only` - Verifies duration formatting for seconds-only values.
+- `tests/test_logic.py::test_format_duration_minutes_and_seconds` - Verifies duration formatting for minute+second values.
+- `tests/test_logic.py::test_format_duration_hours_and_minutes_and_seconds` - Verifies duration formatting for hour+minute+second values.
+- `tests/test_logic.py::test_format_duration_zero` - Verifies zero duration formatting.
+
 ---
 
 ### 3.1 Geospatial Functions (Pure Functions)
@@ -140,6 +183,16 @@ Ride_Share_Simulator/
 - `get_nearby_geohashes(geohash: str) -> List[str]` - Get neighboring geohash cells (9-cell neighborhood) using `pygeohash` library
 
 **Dependencies:** `math` module (standard library), `pygeohash` library (3rd-party)
+
+**Tests that verify completion (existing only):**
+- `tests/test_logic.py::test_haversine_same_point_is_zero` - Verifies zero distance for identical coordinates.
+- `tests/test_logic.py::test_haversine_equatorial_degree` - Verifies known equatorial distance baseline.
+- `tests/test_logic.py::test_haversine_meridian_distance` - Verifies meridian distance behavior.
+- `tests/test_logic.py::test_haversine_london_to_paris` - Verifies realistic city-to-city distance range.
+- `tests/test_logic.py::test_get_nearby_geohashes_valid` - Verifies valid 9-cell neighborhood lookup.
+- `tests/test_logic.py::test_get_nearby_geohashes_includes_center` - Verifies center geohash is included.
+- `tests/test_logic.py::test_get_nearby_geohashes_invalid_empty` - Verifies empty geohash input is rejected.
+- `tests/test_logic.py::test_get_nearby_geohashes_invalid_none` - Verifies `None` geohash input is rejected.
 
 ---
 
@@ -176,6 +229,9 @@ Files to create:
   - Use `Location.haversine_distance_to()` to compute distances
 
 **Dependencies:** `BaseStrategy`, `Location`, `Driver`, `Ride`
+
+**Tests that verify completion (existing only):**
+- `tests/test_simulator.py::test_shortest_distance_strategy_prefers_closest_driver` - Verifies the strategy selects the nearest candidate driver to pickup.
 
 ---
 
@@ -220,6 +276,9 @@ Files to create:
   - Lower score is better: short normalized distance and small normalized rating mismatch produce the strongest matches
 
 **Dependencies:** `BaseStrategy`, `Location`, `Driver`, `Ride`, `ScoringEngine`
+
+**Tests that verify completion (existing only):**
+- `tests/test_simulator.py::test_weighted_score_strategy_prefers_better_driver` - Verifies weighted score matching behavior (distance and rating tradeoff) and selected driver correctness.
 
 ---
 
@@ -328,6 +387,11 @@ Files to create:
 
 **Dependencies:** BaseStrategy, Driver, Ride, global time/geo functions
 
+**Tests that verify completion (existing only):**
+- `tests/test_simulator.py::test_get_candidate_drivers_filters_by_vehicle_type` - Verifies candidate filtering by vehicle type in spatial selection.
+- `tests/test_simulator.py::test_simulator_assignment_timestamp_is_formatted_string` - Verifies assignment output timestamp format from simulation flow.
+- `tests/test_simulator.py::test_manual_walkthrough_input_produces_expected_regression_outcome` - Verifies end-to-end event flow, concrete assignments, and unassigned rides against regression fixture.
+
 ---
 
 ## Phase 6: Data Input/Output (src/parser.py) [DONE] ✓
@@ -349,6 +413,12 @@ Files to create:
 
 **Dependencies:** `jsonschema` library (3rd-party)
 
+**Tests that verify completion (existing only):**
+- `tests/test_parser.py::test_parse_input_json_skips_invalid_records` - Verifies schema/validation failures are skipped while valid records continue.
+- `tests/test_parser.py::test_parse_input_json_skips_invalid_timestamp_string_request_time` - Verifies invalid ISO-8601 ride timestamps are rejected.
+- `tests/test_parser.py::test_parse_input_json_skips_numeric_request_time` - Verifies numeric `request_time` is rejected when ISO-8601 string is expected.
+- `tests/test_parser.py::test_parse_input_json_skips_ride_missing_vehicle_type` - Verifies missing required ride field is rejected.
+
 ---
 
 ### 6.2 Parser Functions
@@ -368,6 +438,10 @@ Files to create:
   - Return tuple: (drivers, rides)
 
 **Dependencies:** Location, Driver, Ride, global time conversion functions, `jsonschema` library
+
+**Tests that verify completion (existing only):**
+- `tests/test_parser.py::test_parse_input_json_valid` - Verifies valid input file is parsed into `Driver` and `Ride` objects.
+- `tests/test_parser.py::test_parse_input_json_skips_invalid_records` - Verifies partial-failure behavior (invalid records skipped, valid records parsed).
 
 ---
 
@@ -408,6 +482,9 @@ Files to create:
     ```
 
 **Dependencies:** json module, Simulator
+
+**Tests that verify completion (existing only):**
+- `tests/test_parser.py::test_generate_report_and_save_to_json` - Verifies report structure generation and successful JSON output serialization to file.
 
 ---
 
@@ -457,10 +534,12 @@ Files to create:
 ### 8.1 Test Files Structure
 - `tests/test_models.py` - Test Location, Driver, Ride classes
 - `tests/test_logic.py` - Test time/geo functions
-- `tests/test_strategies.py` - Test strategy implementations (BaseStrategy, ShortestDistanceStrategy, WeightedScoreStrategy, ScoringEngine)
 - `tests/test_simulator.py` - Test Simulator orchestration
 - `tests/test_parser.py` - Test JSON parsing and validation
-- `tests/test_integration.py` - End-to-end simulation tests
+
+**Current coverage note (existing files only):**
+- Strategy behavior is currently validated through scenario tests in `tests/test_simulator.py`.
+- End-to-end behavior is currently validated by `test_manual_walkthrough_input_produces_expected_regression_outcome` in `tests/test_simulator.py`.
 
 **Testing Framework:** pytest
 

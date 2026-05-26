@@ -7,11 +7,13 @@ from src.logic import BASE_SPEED_KMH
 
 
 def test_distance_to_same_location_is_zero() -> None:
+    # Test that the distance from a location to itself is zero
     location = Location(lat=51.5074, lon=-0.1278)
     assert math.isclose(location.distance_to(location), 0.0, abs_tol=1e-9)
 
 
 def test_distance_to_known_equatorial_degree() -> None:
+    # Test the distance between two points on the equator that are 1 degree apart in longitude
     location_a = Location(lat=0.0, lon=0.0)
     location_b = Location(lat=0.0, lon=1.0)
 
@@ -20,6 +22,7 @@ def test_distance_to_known_equatorial_degree() -> None:
 
 
 def test_to_geohash_default_precision() -> None:
+    # Test the default precision of the geohash
     location = Location(lat=37.7749, lon=-122.4194)
     geohash_default = location.to_geohash()
     geohash_precision_5 = location.to_geohash(precision=5)
@@ -30,6 +33,7 @@ def test_to_geohash_default_precision() -> None:
 
 
 def test_to_geohash_invalid_precision_raises_value_error() -> None:
+    # Test that providing an invalid precision (e.g., 0) raises a ValueError
     location = Location(lat=0.0, lon=0.0)
 
     with pytest.raises(ValueError):
@@ -37,9 +41,12 @@ def test_to_geohash_invalid_precision_raises_value_error() -> None:
 
 
 # ==================== Driver Tests ====================
-
+# todo: the Driver Model should validate that the vehicle type is one of the allowed types
+# those test should be failed yet because "sedan" is not an allowed vehicle type
+# those validation are verified in the Schema Json, add it to the model too (drivers and rides)
 
 def test_driver_creation_valid() -> None:
+    # Test creating a Driver with valid fields and ensure they are set correctly
     location = Location(lat=51.5074, lon=-0.1278)
     driver = Driver(
         id="d1",
@@ -59,6 +66,7 @@ def test_driver_creation_valid() -> None:
 
 
 def test_driver_creation_invalid_id() -> None:
+    # Test that providing an empty id raises a ValueError
     location = Location(lat=0.0, lon=0.0)
 
     with pytest.raises(ValueError, match="id cannot be empty"):
@@ -72,6 +80,7 @@ def test_driver_creation_invalid_id() -> None:
 
 
 def test_driver_creation_invalid_rating_too_low() -> None:
+    # Test that providing a rating below the minimum (e.g., 0.5) raises a ValueError
     location = Location(lat=0.0, lon=0.0)
 
     with pytest.raises(ValueError, match="rating must be between"):
@@ -79,12 +88,13 @@ def test_driver_creation_invalid_rating_too_low() -> None:
             id="d2",
             name="Charlie",
             rating=0.5,
-            vehicle_type="sedan",
+            vehicle_type="sedan", 
             current_location=location,
         )
 
 
 def test_driver_creation_invalid_rating_too_high() -> None:
+    # Test that providing a rating above the maximum (e.g., 5.5) raises a ValueError
     location = Location(lat=0.0, lon=0.0)
 
     with pytest.raises(ValueError, match="rating must be between"):
@@ -98,6 +108,7 @@ def test_driver_creation_invalid_rating_too_high() -> None:
 
 
 def test_driver_creation_invalid_vehicle_type() -> None:
+    # Test that providing an empty vehicle_type raises a ValueError
     location = Location(lat=0.0, lon=0.0)
 
     with pytest.raises(ValueError, match="vehicle_type cannot be empty"):
@@ -109,8 +120,9 @@ def test_driver_creation_invalid_vehicle_type() -> None:
             current_location=location,
         )
 
-
+# todo the avilable_at should be a timestamp string in ISO format instead of a float
 def test_driver_creation_invalid_available_at() -> None:
+    # Test that providing a negative available_at time raises a ValueError
     location = Location(lat=0.0, lon=0.0)
 
     with pytest.raises(ValueError, match="available_at cannot be negative"):
@@ -125,6 +137,7 @@ def test_driver_creation_invalid_available_at() -> None:
 
 
 def test_driver_update_location() -> None:
+    # Test that the driver's location can be updated correctly
     location1 = Location(lat=51.5074, lon=-0.1278)
     location2 = Location(lat=48.8566, lon=2.3522)
     driver = Driver(
@@ -136,6 +149,7 @@ def test_driver_update_location() -> None:
 
 
 def test_driver_less_than_comparison() -> None:
+    # Test that the less-than comparison between drivers works correctly based on available_at
     location = Location(lat=0.0, lon=0.0)
     driver1 = Driver(
         id="d7",
@@ -159,6 +173,7 @@ def test_driver_less_than_comparison() -> None:
 
 
 def test_driver_repr() -> None:
+    # Test the string representation of a Driver and ensure it contains key information
     location = Location(lat=51.5074, lon=-0.1278)
     driver = Driver(
         id="d9",
@@ -180,6 +195,7 @@ def test_driver_repr() -> None:
 
 
 def test_ride_creation_valid() -> None:
+    # Test creating a Ride with valid fields and ensure they are set correctly
     pickup = Location(lat=51.5074, lon=-0.1278)
     dropoff = Location(lat=48.8566, lon=2.3522)
     ride = Ride(
@@ -198,6 +214,7 @@ def test_ride_creation_valid() -> None:
 
 
 def test_ride_creation_invalid_id() -> None:
+    # Test that providing an empty id raises a ValueError
     pickup = Location(lat=0.0, lon=0.0)
     dropoff = Location(lat=1.0, lon=1.0)
 
@@ -212,6 +229,7 @@ def test_ride_creation_invalid_id() -> None:
 
 
 def test_ride_creation_invalid_rating_too_low() -> None:
+    # Test that providing a rating below the minimum raises a ValueError
     pickup = Location(lat=0.0, lon=0.0)
     dropoff = Location(lat=1.0, lon=1.0)
 
@@ -226,6 +244,7 @@ def test_ride_creation_invalid_rating_too_low() -> None:
 
 
 def test_ride_creation_invalid_rating_too_high() -> None:
+    # Test that providing a rating above the maximum raises a ValueError
     pickup = Location(lat=0.0, lon=0.0)
     dropoff = Location(lat=1.0, lon=1.0)
 
@@ -240,6 +259,7 @@ def test_ride_creation_invalid_rating_too_high() -> None:
 
 
 def test_ride_creation_invalid_request_time() -> None:
+    # Test that providing an invalid request time raises a ValueError
     pickup = Location(lat=0.0, lon=0.0)
     dropoff = Location(lat=1.0, lon=1.0)
 
@@ -254,6 +274,7 @@ def test_ride_creation_invalid_request_time() -> None:
 
 
 def test_ride_calculate_distance() -> None:
+    # Test the distance calculation between two locations
     pickup = Location(lat=0.0, lon=0.0)
     dropoff = Location(lat=0.0, lon=1.0)
     ride = Ride(
@@ -269,6 +290,7 @@ def test_ride_calculate_distance() -> None:
 
 
 def test_ride_calculate_estimated_time_with_default_speed() -> None:
+    # Test the estimated time calculation using the default speed
     pickup = Location(lat=0.0, lon=0.0)
     dropoff = Location(lat=0.0, lon=1.0)
     ride = Ride(
@@ -285,6 +307,7 @@ def test_ride_calculate_estimated_time_with_default_speed() -> None:
 
 
 def test_ride_calculate_estimated_time_with_custom_speed() -> None:
+    # Test the estimated time calculation using a custom speed
     pickup = Location(lat=0.0, lon=0.0)
     dropoff = Location(lat=0.0, lon=1.0)
     ride = Ride(
@@ -301,6 +324,7 @@ def test_ride_calculate_estimated_time_with_custom_speed() -> None:
 
 
 def test_ride_calculate_estimated_time_invalid_speed() -> None:
+    # Test that providing an invalid speed (e.g., 0) raises a ValueError
     pickup = Location(lat=0.0, lon=0.0)
     dropoff = Location(lat=1.0, lon=1.0)
     ride = Ride(
@@ -316,6 +340,7 @@ def test_ride_calculate_estimated_time_invalid_speed() -> None:
 
 
 def test_ride_repr() -> None:
+    # Test the string representation of a Ride and ensure it contains key information
     pickup = Location(lat=51.5074, lon=-0.1278)
     dropoff = Location(lat=48.8566, lon=2.3522)
     ride = Ride(
@@ -334,6 +359,8 @@ def test_ride_repr() -> None:
 
 
 def test_ride_request_time_conversion() -> None:
+    # Todo: this test not necessary here yet, till we move the convertion request time into Model 
+    # Test that the request time is correctly converted to seconds and stored in the Ride object
     pickup = Location(lat=0.0, lon=0.0)
     dropoff = Location(lat=1.0, lon=1.0)
     timestamp_seconds = 1716066600.0

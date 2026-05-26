@@ -135,7 +135,7 @@ def parse_input_json(filepath: str) -> Tuple[List[Driver], List[Ride]]:
                 pickup=pickup,
                 dropoff=dropoff,
                 request_time_seconds=_parse_request_time(ride_record["request_time"]),
-                # Todo It better to do the request time convert in the Models model and not here. , to be sure that the ride in the futere
+                # Todo It better to do the request time convert in the Models model and not here, to be sure that the ride in the future
                 passenger_rating=float(ride_record["passenger_rating"]),
                 vehicle_type=ride_record["vehicle_type"],
             )

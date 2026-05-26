@@ -6,6 +6,7 @@ from src.strategies.weighted import WeightedScoreStrategy
 
 
 def test_get_candidate_drivers_filters_by_vehicle_type():
+    # This test verifies that the Simulator correctly filters candidate drivers based on the requested vehicle type, ensuring that only compatible drivers are considered for assignment.
     pickup = Location(10.0, 10.0)
     dropoff = Location(10.1, 10.1)
 
@@ -46,6 +47,7 @@ def test_get_candidate_drivers_filters_by_vehicle_type():
 
 
 def test_weighted_score_strategy_prefers_better_driver():
+    # This test verifies that the WeightedScoreStrategy correctly prioritizes drivers with higher ratings, even if they are slightly farther away, ensuring a better overall passenger experience.
     pickup = Location(10.0, 10.0)
     dropoff = Location(10.05, 10.05)
 
@@ -80,6 +82,7 @@ def test_weighted_score_strategy_prefers_better_driver():
 
 
 def test_shortest_distance_strategy_prefers_closest_driver():
+    # Two drivers with same vehicle type but different distances to pickup. The strategy should prefer the closer one, even if it has a lower rating.
     pickup = Location(10.0, 10.0)
     dropoff = Location(10.05, 10.05)
 
@@ -114,6 +117,7 @@ def test_shortest_distance_strategy_prefers_closest_driver():
 
 
 def test_simulator_assignment_timestamp_is_formatted_string():
+    # This test ensures that the Simulator's output contains ISO-8601 formatted timestamps, which is important for downstream processing and consistency.
     ride = Ride(
         id="r3",
         pickup=Location(10.0, 10.0),
@@ -140,6 +144,7 @@ def test_simulator_assignment_timestamp_is_formatted_string():
 
 
 def test_manual_walkthrough_input_produces_expected_regression_outcome():
+    # This test runs the simulator with a predefined input dataset and checks that the resulting driver-ride assignments and unassigned rides match the expected outcome, ensuring that recent changes have not introduced regressions in the core matching logic.
     drivers, rides = parse_input_json("data/manual_walkthrough_input.json")
     rides.sort(key=lambda ride: (ride.request_time_seconds, ride.calculate_distance(), ride.id))
 
