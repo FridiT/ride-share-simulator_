@@ -67,6 +67,8 @@ class WeightedScoreStrategy(BaseStrategy):
             return None
 
         # Calculate scores for all candidates
+        # todo: could be optimized by calculating the scores in parallel, and then just picking the minimum
+
         scores = [
             (self._calculate_weighted_score(
                 driver.current_location.distance_to(ride.pickup),

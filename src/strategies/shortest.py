@@ -27,6 +27,7 @@ class ShortestDistanceStrategy(BaseStrategy):
             return None
 
         # Find the driver with minimum distance to the pickup location
+        # todo: could be optimized by calculating distances in parallel, and then just picking the minimum
         closest_driver = min(
             candidate_drivers,
             key=lambda driver: driver.current_location.distance_to(ride.pickup)

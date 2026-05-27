@@ -102,6 +102,8 @@ class Simulator:
 
     # --- Matching & assignment --------------------------------------------
     def match_ride(self, ride: Ride) -> Optional[Driver]:
+        # todo: we could to put the match in different module and make it more generic, so we can use it for different types of matching (e.g. matching passengers to drivers, matching drivers to passengers, etc.). 
+        # This way we can have a more flexible and extensible design that can accommodate different use cases and requirements.
         candidates = self.get_candidate_drivers(ride)
         return self.strategy.match(ride, candidates)
 
