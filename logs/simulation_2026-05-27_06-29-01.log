@@ -1,0 +1,78 @@
+2026-05-27 09:29:01,263 INFO __main__ Starting Ride Share Simulator
+2026-05-27 09:29:01,263 INFO __main__ Input: data/input.json
+2026-05-27 09:29:01,263 INFO __main__ Strategy: weighted
+2026-05-27 09:29:01,265 INFO __main__ Output: output/results.json
+2026-05-27 09:29:02,284 INFO __main__ Loaded 30 drivers and 70 rides from input
+2026-05-27 09:29:02,286 INFO src.simulator Starting simulation: 70 rides
+2026-05-27 09:29:02,286 INFO src.simulator Assigned ride ride_1 to driver driver_26 at timestamp 2025-01-01T08:00:00Z
+2026-05-27 09:29:02,286 INFO src.simulator Assigned ride ride_2 to driver driver_27 at timestamp 2025-01-01T08:00:05Z
+2026-05-27 09:29:02,293 INFO src.simulator Assigned ride ride_3 to driver driver_24 at timestamp 2025-01-01T08:00:12Z
+2026-05-27 09:29:02,295 INFO src.simulator Assigned ride ride_4 to driver driver_28 at timestamp 2025-01-01T08:00:32Z
+2026-05-27 09:29:02,295 INFO src.simulator Assigned ride ride_5 to driver driver_19 at timestamp 2025-01-01T08:00:43Z
+2026-05-27 09:29:02,295 INFO src.simulator Assigned ride ride_6 to driver driver_15 at timestamp 2025-01-01T08:00:55Z
+2026-05-27 09:29:02,295 INFO src.simulator Assigned ride ride_7 to driver driver_18 at timestamp 2025-01-01T08:01:01Z
+2026-05-27 09:29:02,295 INFO src.simulator Assigned ride ride_8 to driver driver_21 at timestamp 2025-01-01T08:01:12Z
+2026-05-27 09:29:02,297 INFO src.simulator Assigned ride ride_9 to driver driver_1 at timestamp 2025-01-01T08:01:30Z
+2026-05-27 09:29:02,297 INFO src.simulator Assigned ride ride_10 to driver driver_23 at timestamp 2025-01-01T08:01:38Z
+2026-05-27 09:29:02,297 INFO src.simulator Assigned ride ride_11 to driver driver_9 at timestamp 2025-01-01T08:01:47Z
+2026-05-27 09:29:02,297 INFO src.simulator Assigned ride ride_13 to driver driver_12 at timestamp 2025-01-01T08:02:05Z
+2026-05-27 09:29:02,297 INFO src.simulator Assigned ride ride_14 to driver driver_14 at timestamp 2025-01-01T08:02:22Z
+2026-05-27 09:29:02,299 INFO src.simulator Assigned ride ride_15 to driver driver_11 at timestamp 2025-01-01T08:02:42Z
+2026-05-27 09:29:02,299 INFO src.simulator Assigned ride ride_16 to driver driver_3 at timestamp 2025-01-01T08:02:48Z
+2026-05-27 09:29:02,299 INFO src.simulator Assigned ride ride_17 to driver driver_7 at timestamp 2025-01-01T08:02:58Z
+2026-05-27 09:29:02,299 INFO src.simulator Assigned ride ride_18 to driver driver_16 at timestamp 2025-01-01T08:03:04Z
+2026-05-27 09:29:02,301 INFO src.simulator Assigned ride ride_22 to driver driver_8 at timestamp 2025-01-01T08:03:49Z
+2026-05-27 09:29:02,301 INFO src.simulator Assigned ride ride_23 to driver driver_2 at timestamp 2025-01-01T08:03:57Z
+2026-05-27 09:29:02,303 INFO src.simulator Assigned ride ride_25 to driver driver_6 at timestamp 2025-01-01T08:04:14Z
+2026-05-27 09:29:02,305 INFO src.simulator Assigned ride ride_27 to driver driver_29 at timestamp 2025-01-01T08:04:36Z
+2026-05-27 09:29:02,307 INFO src.simulator Assigned ride ride_31 to driver driver_4 at timestamp 2025-01-01T08:05:22Z
+2026-05-27 09:29:02,312 INFO src.simulator Assigned ride ride_34 to driver driver_5 at timestamp 2025-01-01T08:06:09Z
+2026-05-27 09:29:02,314 INFO src.simulator Assigned ride ride_35 to driver driver_20 at timestamp 2025-01-01T08:06:17Z
+2026-05-27 09:29:02,316 INFO src.simulator Assigned ride ride_37 to driver driver_17 at timestamp 2025-01-01T08:06:39Z
+2026-05-27 09:29:02,318 INFO src.simulator Assigned ride ride_38 to driver driver_22 at timestamp 2025-01-01T08:06:53Z
+2026-05-27 09:29:02,320 INFO src.simulator Unassigned ride ride_12 after timeout at simulation time 2025-01-01T08:07:10Z
+2026-05-27 09:29:02,320 INFO src.simulator Assigned ride ride_39 to driver driver_25 at timestamp 2025-01-01T08:07:10Z
+2026-05-27 09:29:02,324 INFO src.simulator Assigned ride ride_43 to driver driver_13 at timestamp 2025-01-01T08:08:05Z
+2026-05-27 09:29:02,343 INFO src.simulator Unassigned ride ride_19 after timeout at simulation time 2025-01-01T08:08:24Z
+2026-05-27 09:29:02,345 INFO src.simulator Assigned ride ride_45 to driver driver_30 at timestamp 2025-01-01T08:08:24Z
+2026-05-27 09:29:02,345 INFO src.simulator Unassigned ride ride_20 after timeout at simulation time 2025-01-01T08:08:32Z
+2026-05-27 09:29:02,347 INFO src.simulator Unassigned ride ride_21 after timeout at simulation time 2025-01-01T08:08:51Z
+2026-05-27 09:29:02,347 INFO src.simulator Unassigned ride ride_24 after timeout at simulation time 2025-01-01T08:09:11Z
+2026-05-27 09:29:02,351 INFO src.simulator Unassigned ride ride_26 after timeout at simulation time 2025-01-01T08:09:32Z
+2026-05-27 09:29:02,353 INFO src.simulator Unassigned ride ride_28 after timeout at simulation time 2025-01-01T08:09:51Z
+2026-05-27 09:29:02,355 INFO src.simulator Assigned ride ride_51 to driver driver_19 at timestamp 2025-01-01T08:09:51Z
+2026-05-27 09:29:02,355 INFO src.simulator Unassigned ride ride_29 after timeout at simulation time 2025-01-01T08:10:08Z
+2026-05-27 09:29:02,357 INFO src.simulator Unassigned ride ride_30 after timeout at simulation time 2025-01-01T08:10:20Z
+2026-05-27 09:29:02,359 INFO src.simulator Unassigned ride ride_32 after timeout at simulation time 2025-01-01T08:10:54Z
+2026-05-27 09:29:02,361 INFO src.simulator Unassigned ride ride_33 after timeout at simulation time 2025-01-01T08:11:01Z
+2026-05-27 09:29:02,366 INFO src.simulator Assigned ride ride_59 to driver driver_26 at timestamp 2025-01-01T08:11:15Z
+2026-05-27 09:29:02,367 INFO src.simulator Unassigned ride ride_36 after timeout at simulation time 2025-01-01T08:11:40Z
+2026-05-27 09:29:02,373 INFO src.simulator Assigned ride ride_62 to driver driver_10 at timestamp 2025-01-01T08:11:54Z
+2026-05-27 09:29:02,379 INFO src.simulator Unassigned ride ride_40 after timeout at simulation time 2025-01-01T08:12:30Z
+2026-05-27 09:29:02,383 INFO src.simulator Unassigned ride ride_41 after timeout at simulation time 2025-01-01T08:12:58Z
+2026-05-27 09:29:02,385 INFO src.simulator Unassigned ride ride_42 after timeout at simulation time 2025-01-01T08:13:15Z
+2026-05-27 09:29:02,385 INFO src.simulator Unassigned ride ride_44 after timeout at simulation time 2025-01-01T08:13:28Z
+2026-05-27 09:29:02,387 INFO src.simulator Unassigned ride ride_46 after timeout at simulation time 2025-01-01T08:13:46Z
+2026-05-27 09:29:02,387 INFO src.simulator Unassigned ride ride_47 after timeout at simulation time 2025-01-01T08:13:53Z
+2026-05-27 09:29:02,389 INFO src.simulator Assigned ride ride_48 to driver driver_24 at timestamp 2025-01-01T08:14:47Z
+2026-05-27 09:29:02,389 INFO src.simulator Unassigned ride ride_49 after timeout at simulation time 2025-01-01T08:14:47Z
+2026-05-27 09:29:02,389 INFO src.simulator Unassigned ride ride_50 after timeout at simulation time 2025-01-01T08:14:47Z
+2026-05-27 09:29:02,391 INFO src.simulator Unassigned ride ride_52 after timeout at simulation time 2025-01-01T08:16:29Z
+2026-05-27 09:29:02,391 INFO src.simulator Unassigned ride ride_53 after timeout at simulation time 2025-01-01T08:16:29Z
+2026-05-27 09:29:02,391 INFO src.simulator Unassigned ride ride_54 after timeout at simulation time 2025-01-01T08:16:29Z
+2026-05-27 09:29:02,391 INFO src.simulator Unassigned ride ride_55 after timeout at simulation time 2025-01-01T08:16:29Z
+2026-05-27 09:29:02,391 INFO src.simulator Assigned ride ride_56 to driver driver_16 at timestamp 2025-01-01T08:16:29Z
+2026-05-27 09:29:02,391 INFO src.simulator Unassigned ride ride_57 after timeout at simulation time 2025-01-01T08:16:29Z
+2026-05-27 09:29:02,391 INFO src.simulator Unassigned ride ride_58 after timeout at simulation time 2025-01-01T08:16:29Z
+2026-05-27 09:29:02,391 INFO src.simulator Unassigned ride ride_60 after timeout at simulation time 2025-01-01T08:16:29Z
+2026-05-27 09:29:02,391 INFO src.simulator Unassigned ride ride_61 after timeout at simulation time 2025-01-01T08:17:26Z
+2026-05-27 09:29:02,393 INFO src.simulator Unassigned ride ride_63 after timeout at simulation time 2025-01-01T08:17:26Z
+2026-05-27 09:29:02,393 INFO src.simulator Unassigned ride ride_64 after timeout at simulation time 2025-01-01T08:20:04Z
+2026-05-27 09:29:02,393 INFO src.simulator Unassigned ride ride_65 after timeout at simulation time 2025-01-01T08:20:04Z
+2026-05-27 09:29:02,393 INFO src.simulator Unassigned ride ride_66 after timeout at simulation time 2025-01-01T08:20:04Z
+2026-05-27 09:29:02,394 INFO src.simulator Assigned ride ride_67 to driver driver_15 at timestamp 2025-01-01T08:20:04Z
+2026-05-27 09:29:02,394 INFO src.simulator Unassigned ride ride_68 after timeout at simulation time 2025-01-01T08:20:04Z
+2026-05-27 09:29:02,394 INFO src.simulator Unassigned ride ride_69 after timeout at simulation time 2025-01-01T08:20:04Z
+2026-05-27 09:29:02,394 INFO src.simulator Unassigned ride ride_70 after timeout at simulation time 2025-01-01T08:20:04Z
+2026-05-27 09:29:02,394 INFO src.simulator Simulation finished: 35 assigned, 35 unassigned
+2026-05-27 09:29:02,396 INFO __main__ Simulation complete. Results written to output/results.json
