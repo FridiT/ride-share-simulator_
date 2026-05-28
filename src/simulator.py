@@ -158,6 +158,8 @@ class Simulator:
             next_driver_release = self.busy_drivers[0].available_at if self.busy_drivers else float("inf")
             next_event_time = min(next_ride_time, next_driver_release)
 
+            # todo: this if is new part, for a case without a new ride arrival or driver release, but with pending rides in the queue
+            
             # If there are no future ride arrivals or driver releases, but
             # there are pending rides, advance time only to the point where
             # pending rides would expire instead of setting time to inf.
