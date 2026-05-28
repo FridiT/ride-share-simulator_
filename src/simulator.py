@@ -16,6 +16,7 @@ from src.logic import (
     seconds_to_timestamp_str,
     get_nearby_geohashes,
 )
+from src.logic import RIDE_REQUEST_TIMEOUT_SECONDS
 from src.models import Driver, Ride
 from src.strategies.base import BaseStrategy
 
@@ -157,7 +158,19 @@ class Simulator:
             next_driver_release = self.busy_drivers[0].available_at if self.busy_drivers else float("inf")
             next_event_time = min(next_ride_time, next_driver_release)
 
-            # Advance time
+            # If there are no future ride arrivals or driver releases, but
+            # there are pending rides, advance time only to the point where
+            # pending rides would expire instead of setting time to inf.
+            if next_event_time == float("inf") and self.pending_rides:
+                expire_time = max(
+                    (p.request_time_seconds + RIDE_REQUEST_TIMEOUT_SECONDS) for p in self.pending_rides
+                )
+                # Advance slightly past the exact expiry so `is_timed_out` (which uses
+                # a strict > comparison) evaluates True and pending rides are handled
+                # instead of repeatedly re-queuing at the same timestamp.
+                next_event_time = expire_time + 1.0
+
+            # Advance time (safe finite value)
             self.current_time = max(self.current_time, next_event_time)
 
             # Release drivers that have completed trips
